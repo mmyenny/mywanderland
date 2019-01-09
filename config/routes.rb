@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  get '/api/albums', to: 'api/albums#index'
+  
+  
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   if Rails.env.production?
     CLIENT_HTML = File.read(Rails.root.join('public/index.html'))
 
