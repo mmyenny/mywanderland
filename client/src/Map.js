@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import MapGL, { Marker, Popup, NavigationControl } from 'react-map-gl'
 import axios from 'axios'
 import US_Map3 from './images/US-map3.png'
 

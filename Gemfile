@@ -44,3 +44,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "awesome_print", "~> 1.8"
 
 gem "rack-cors", "~> 1.0"
+
+gem "geocoder", "~> 1.5"
