@@ -1,0 +1,427 @@
+body {
+  background-color: rgb(1, 1, 78);
+}
+
+canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+li {
+  color: white;
+}
+
+@font-face {
+  font-family: billabong;
+  src: url(./images/Billabong.ttf);
+}
+
+main.mainPage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mainPage h1 {
+  text-align: center;
+  color: white;
+  text-shadow: 1.75px 1.75px #338be6;
+  font-family: billabong;
+  font-size: 4rem;
+  font-weight: 300;
+  background-color: rgba(1, 1, 78, 0.6);
+  border-radius: 42%;
+  margin: 20px 175px 20px 175px;
+}
+
+.inputBox {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+input {
+  border-radius: 5px;
+  outline-color: #003f56;
+}
+
+button {
+  border-radius: 5px;
+  margin-left: 5px;
+  outline: none;
+}
+
+.fa-map-pin {
+}
+
+img.map {
+  width: 95%;
+  height: 95%;
+  border: 1px solid white;
+  box-shadow: 0 0 10px white;
+  border-radius: 5px;
+}
+
+/* Log in page */
+
+main.logInPage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logInPage h1 {
+  text-align: center;
+  color: white;
+  text-shadow: 1.75px 1.75px #338be6;
+  font-family: billabong;
+  font-size: 4rem;
+  font-weight: 300;
+  background-color: rgba(1, 1, 78, 0.3);
+  border-radius: 42%;
+  margin: 20px 175px 20px 175px;
+}
+
+div.logIn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  padding: 10px 0 10px 0;
+  margin: 25px 10px 10px 10px;
+  background-color: rgba(1, 1, 78, 0.6);
+  border: 1.25px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+}
+
+.camera {
+  width: 70px;
+  border-radius: 50%;
+  margin-top: -45px;
+  margin-bottom: 10px;
+}
+
+.plus {
+  width: 20px;
+  border-radius: 50%;
+  margin-top: -25px;
+  margin-right: -43px;
+  margin-bottom: 5px;
+}
+
+.logIn input {
+  margin-top: 5px;
+  outline-color: #338be6;
+}
+
+.logIn button {
+  margin-top: 10px;
+  margin-left: 0;
+  width: 75px;
+  cursor: pointer;
+}
+
+div.logInOptions {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.logInOptions label {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+label.logInOptions {
+  display: flex;
+  align-items: center;
+}
+
+.logInOptions a {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  padding-top: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+div.logInOr {
+  display: flex;
+  align-items: center;
+}
+
+.logInOr h4 {
+  margin-left: 5px;
+  margin-right: 5px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+div.logInOrLine {
+  height: 1px;
+  width: 55px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+button.googleLogIn {
+  color: white;
+  background-color: #3a88ed;
+  border: none;
+  font-size: 15px;
+  height: 25px;
+  width: 200px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+button.facebookLogIn {
+  color: white;
+  background-color: #395a94;
+  border: none;
+  font-size: 15px;
+  height: 25px;
+  width: 200px;
+  cursor: pointer;
+}
+
+/* Sign up page */
+
+main.signUpPage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.signUpPage h1 {
+  text-align: center;
+  color: white;
+  text-shadow: 1.75px 1.75px #338be6;
+  font-family: billabong;
+  font-size: 4rem;
+  font-weight: 300;
+  background-color: rgba(1, 1, 78, 0.3);
+  border-radius: 42%;
+  margin: 20px 175px 20px 175px;
+}
+
+div.signUp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  padding: 10px 0 10px 0;
+  margin: 25px 10px 10px 10px;
+  background-color: rgba(1, 1, 78, 0.6);
+  border: 1.25px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+}
+
+.signUp input {
+  margin-top: 5px;
+  outline-color: #338be6;
+}
+
+.signUp button {
+  margin-top: 10px;
+  margin-left: 0;
+  width: 75px;
+  cursor: pointer;
+}
+
+.signUp a {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  padding-top: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Introduction */
+
+div.introduction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.introduction h1 {
+  color: black;
+  font-family: billabong;
+  font-size: 2.25rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.introduction button {
+  margin: 10px;
+  width: 75px;
+  cursor: pointer;
+}
+
+/* pin-popUp page */
+
+.pinPopUp {
+  display: flex;
+  flex-direction: column;
+  background-color: #eceae4;
+  width: 13rem;
+  align-items: center;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+p {
+  margin: 0;
+}
+
+img.photoAlbumPreview {
+  max-height: 100px;
+  max-width: 100px;
+  margin-top: 5px;
+}
+
+.pinPopUp button {
+  width: 100px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+/* photo gallery page */
+
+.x img {
+  width: 15px;
+  height: 15px;
+  padding: 10px;
+}
+
+main.photoGalleryPage {
+  display: flex;
+  flex-wrap: wrap;
+  background: white;
+  border-radius: 5px;
+}
+
+.topBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profileBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profileImage {
+  width: 70px;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+.profilePlus {
+  border-radius: 50%;
+  width: 20px;
+  margin-top: -15px;
+  margin-left: 43px;
+}
+
+.profileBar h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 550;
+  margin: 10px 0 10px 5px;
+}
+
+.profileBar button {
+  width: 100px;
+  cursor: pointer;
+}
+
+div.photoGallerySection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.photoGallerySection h4 {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 550;
+}
+
+.photoPlus {
+  border-radius: 50%;
+  width: 20px;
+}
+
+div.photosGalleryImages {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2px;
+  justify-content: center;
+}
+
+img.photoGalleryImage {
+  margin: 2px;
+  height: 100px;
+  width: 125px;
+}
+
+/* individual photo page */
+
+div.photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: 5px;
+  width: 500px;
+  margin: 20px;
+}
+
+.photo img {
+  margin: 5px;
+  width: 450px;
+}
+
+/* pinned map page */
+
+.pin {
+  margin-top: -170px;
+  margin-right: 120px;
+  width: 45px;
+}
+
+.pin1 {
+  margin-top: -200px;
+  margin-right: 200px;
+  width: 45px;
+}
+
+.pin2 {
+  margin-top: -100px;
+  margin-left: 200px;
+  width: 45px;
+}
