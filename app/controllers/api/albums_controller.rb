@@ -3,12 +3,18 @@ class Api::AlbumsController < ApplicationController
     # Get all the location
     albums = Album.all
 
+
     # Make some json to return
-    return json: {
+    render json: {
       albums: albums.map do |album|
-        id: album.id,
-        title: album.title,
-        location: album.location
+        {
+          id: album.id,
+          title: album.title,
+          location: album.location,
+          latitude: album.latitude,
+          longitude: album.longitude  
+        }
+      end
     }
     
     # albums: [

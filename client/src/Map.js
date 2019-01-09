@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import axios from 'axios'
 import US_Map3 from './images/US-map3.png'
 
 class Map extends Component {
@@ -7,24 +8,16 @@ class Map extends Component {
     super(props)
 
     this.state = {
-      albums: [
-        {
-          id: 1,
-          title: 'Summer Vacation',
-          location: 'St Petersburg',
-          latitude: 27.7700989,
-          longitude: -82.6364093
-        },
-        {
-          id: 2,
-          title: 'Christmas 2015',
-          location: 'Tampa',
-          latitude: 27.7708,
-          longitude: -82.6635
-        }
-      ]
+      albums: []
     }
   }
+
+  componentDidMount() {
+    axios.get('api/albums').then(response => {
+      this.setState({ albums: response.data.albums })
+    })
+  }
+
   render() {
     return (
       <div>
