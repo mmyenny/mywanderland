@@ -7,7 +7,22 @@ class Map extends Component {
     super(props)
 
     this.state = {
-      albums: []
+      albums: [
+        {
+          id: 1,
+          title: 'Summer Vacation',
+          location: 'St Petersburg',
+          latitude: 27.7700989,
+          longitude: -82.6364093
+        },
+        {
+          id: 2,
+          title: 'Christmas 2015',
+          location: 'Tampa',
+          latitude: 27.7708,
+          longitude: -82.6635
+        }
+      ]
     }
   }
   render() {
@@ -25,11 +40,11 @@ class Map extends Component {
             </Link>
           </div>
           <ul>
-            <li>Alumn Name - Tampa - 24.56345354 - -82.435435345</li>
-            <li>Alumn Name - Tampa - 24.56345354 - -82.435435345</li>
-            <li>Alumn Name - Tampa - 24.56345354 - -82.435435345</li>
-            <li>Alumn Name - Tampa - 24.56345354 - -82.435435345</li>
-            <li>Alumn Name - Tampa - 24.56345354 - -82.435435345</li>
+            {this.state.albums.map(albums => (
+              <li key={albums.id}>
+                {albums.title} - {albums.location}{' '}
+              </li>
+            ))}
           </ul>
           <img className="map" src={US_Map3} alt="US map" />
         </main>
