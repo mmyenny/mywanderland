@@ -22,7 +22,7 @@ class App extends Component {
           <Route path="/Map/" component={Map} />
           <Route path="/Pinpopup/" component={Pinpopup} />
           <Route path="/Pinnedmap/" component={Pinnedmap} />
-          <Route path="/Photos/" component={Photos} />
+          <Route path="/Photos/:id" component={Photos} />
           <Route path="/Photo/" component={Photo} />
         </div>
       </Router>

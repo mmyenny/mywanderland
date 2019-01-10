@@ -3,16 +3,18 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import MapGL, { Marker, Popup, NavigationControl } from 'react-map-gl'
 import axios from 'axios'
 import Pin from './images/pin.png'
+import photo_album from './images/photo-album1.png'
 
 class Map extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
+      popupInfo: null,
       viewport: {
         latitude: 37.785164,
         longitude: -100,
-        zoom: 3.5,
+        zoom: 2.5,
         bearing: 0,
         pitch: 0
       },
@@ -28,6 +30,34 @@ class Map extends Component {
 
   _updateViewport = viewport => {
     this.setState({ viewport })
+  }
+
+  renderPopup() {
+    const { popupInfo } = this.state
+
+    if (!popupInfo) {
+      return
+    }
+    return (
+      <Popup
+        tipSize={5}
+        anchor="top"
+        longitude={popupInfo.longitude}
+        latitude={popupInfo.latitude}
+        closeOnClick={false}
+        onClose={() => this.setState({ popupInfo: null })}
+      >
+        <div className="pinPopUp">
+          <p>{popupInfo.title}</p>
+          <p>{popupInfo.location}</p>
+          <img className="photoAlbumPreview" src={photo_album} alt="Album" />
+          <Link to={`/Photos/${popupInfo.id}`}>
+            {' '}
+            <button>View Photos</button>{' '}
+          </Link>
+        </div>
+      </Popup>
+    )
   }
 
   render() {
@@ -73,6 +103,8 @@ class Map extends Component {
                 <NavigationControl onViewportChange={this._updateViewport} />
               </div>
 
+              {this.renderPopup()}
+
               {this.state.albums.map(album => {
                 return (
                   <Marker
@@ -80,7 +112,11 @@ class Map extends Component {
                     latitude={album.latitude}
                     longitude={album.longitude}
                   >
-                    <img src={Pin} />
+                    <img
+                      onClick={() => this.setState({ popupInfo: album })}
+                      width="64"
+                      src={Pin}
+                    />
                   </Marker>
                 )
               })}
