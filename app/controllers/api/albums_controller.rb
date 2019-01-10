@@ -11,8 +11,8 @@ class Api::AlbumsController < ApplicationController
           id: album.id,
           title: album.title,
           location: album.location,
-          latitude: album.latitude,
-          longitude: album.longitude  
+          latitude: album.latitude.to_f,
+          longitude: album.longitude.to_f  
         }
       end
     }
