@@ -1,19 +1,18 @@
-class Api::AlbumsController < ApplicationController
+class Api::PlacesController < ApplicationController
   def index
     # Get all the location
-    albums = Album.all
+    places = Place.all
 
 
     # Make some json to return
     render json: {
-      albums: albums.map do |album|
+      places: places.map do |place|
         {
-          id: album.id,
-          title: album.title,
-          location: album.location,
-          latitude: album.latitude.to_f,
-          longitude: album.longitude.to_f,
-          image: album.photos.first ? url_for(album.photos.first.image) : nil
+          id: place.id,
+          location: place.location,
+          latitude: place.latitude,
+          longitude: place.longitude
+        
         }
       end
     }

@@ -13,12 +13,18 @@ import mountains4 from './images/mountains4.jpeg'
 import plus_circle from './images/plus-circle.png'
 
 class Photos extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      albums: []
+    }
+  }
+
   render() {
     return (
       <div>
         <canvas />
-        {/* <input type="file" /><input /> */}
-
         <main className="photoGalleryPage">
           <div className="topBar">
             <div className="profileBar">
@@ -40,7 +46,7 @@ class Photos extends Component {
 
           <div className="photoGallerySection">
             <h4>
-              Summer 2017{' '}
+              Summer 2017
               <img className="photoPlus" src={plus_circle} alt="plus-circle" />
             </h4>
             <div className="photosGalleryImages">
@@ -52,7 +58,7 @@ class Photos extends Component {
               <img className="photoGalleryImage" src={beach4} alt="beach" />
             </div>
             <h4>
-              Fall 2014{' '}
+              Fall 2014
               <img className="photoPlus" src={plus_circle} alt="plus-circle" />
             </h4>
             <div className="photosGalleryImages">

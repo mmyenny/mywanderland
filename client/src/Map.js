@@ -18,13 +18,13 @@ class Map extends Component {
         bearing: 0,
         pitch: 0
       },
-      albums: []
+      places: []
     }
   }
 
   componentDidMount() {
-    axios.get('api/albums').then(response => {
-      this.setState({ albums: response.data.albums })
+    axios.get('api/places').then(response => {
+      this.setState({ places: response.data.places })
     })
   }
 
@@ -48,12 +48,10 @@ class Map extends Component {
         onClose={() => this.setState({ popupInfo: null })}
       >
         <div className="pinPopUp">
-          <p>{popupInfo.title}</p>
           <p>{popupInfo.location}</p>
-          <img className="photoAlbumPreview" src={photo_album} alt="Album" />
+          <img className="photoAlbumPreview" src={photo_album} alt="Place" />
           <Link to={`/Photos/${popupInfo.id}`}>
-            {' '}
-            <button>View Photos</button>{' '}
+            <button>View Photos</button>
           </Link>
         </div>
       </Popup>
@@ -83,19 +81,14 @@ class Map extends Component {
               </button>
             </Link>
           </div>
-          <ul>
-            {this.state.albums.map(albums => (
-              <li key={albums.id}>
-                {albums.title} - {albums.location}
-              </li>
-            ))}
-          </ul>
           <div className="map">
             <MapGL
               {...viewport}
               width="100%"
               height="100%"
-              mapStyle="mapbox://styles/myenny/cjqq3vx8l2o7w2qrq3r29hvpz"
+              mapStyle="mapbox://styles/myenny/cjqrnquxj0fg82qoc0dtbh1qm"
+              // "mapbox://styles/myenny/cjqpt2bff1pxp2spfrm20kr3o"
+
               mapboxApiAccessToken="pk.eyJ1IjoibXllbm55IiwiYSI6ImNqcXBxOTB1bzAxbnozeHFvMnRpcG1leTkifQ.CySljohD9G8a5OpGc1QQjA"
               onViewportChange={this._updateViewport}
             >
@@ -105,17 +98,18 @@ class Map extends Component {
 
               {this.renderPopup()}
 
-              {this.state.albums.map(album => {
+              {this.state.places.map(place => {
                 return (
                   <Marker
-                    key={album.id}
-                    latitude={album.latitude}
-                    longitude={album.longitude}
+                    key={place.id}
+                    latitude={place.latitude}
+                    longitude={place.longitude}
                   >
                     <img
-                      onClick={() => this.setState({ popupInfo: album })}
-                      width="64"
+                      onClick={() => this.setState({ popupInfo: place })}
+                      width="30"
                       src={Pin}
+                      alt="Pin"
                     />
                   </Marker>
                 )
