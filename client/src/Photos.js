@@ -17,7 +17,16 @@ class Photos extends Component {
     super(props)
 
     this.state = {
-      albums: []
+      albums: [
+        {
+          id: 1,
+          title: 'Summer Vacation'
+        },
+        {
+          id: 2,
+          title: 'Christmas 2015'
+        }
+      ]
     }
   }
 
@@ -45,6 +54,17 @@ class Photos extends Component {
           </div>
 
           <div className="photoGallerySection">
+            {this.state.albums.map(albums => (
+              <h4 key={albums.id}>
+                {albums.title}
+                <img
+                  className="photoPlus"
+                  src={plus_circle}
+                  alt="plus-circle"
+                />
+              </h4>
+            ))}
+
             <h4>
               Summer 2017
               <img className="photoPlus" src={plus_circle} alt="plus-circle" />

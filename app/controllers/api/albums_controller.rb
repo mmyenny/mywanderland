@@ -1,38 +1,22 @@
 class Api::AlbumsController < ApplicationController
   def index
-    # Get all the location
-    albums = Album.all
+    # # Get all the location
+    # albums = Album.all
 
 
-    # Make some json to return
-    render json: {
-      albums: albums.map do |album|
-        {
-          id: album.id,
-          title: album.title,
-          location: album.location,
-          latitude: album.latitude.to_f,
-          longitude: album.longitude.to_f,
-          image: album.photos.first ? url_for(album.photos.first.image) : nil
-        }
-      end
-    }
-    
-    # albums: [
-    #   {
-    #     id: 1,
-    #     title: 'Summer Vacation',
-    #     location: 'St Petersburg',
-    #     latitude: 27.7700989,
-    #     longitude: -82.6364093
-    #   },
-    #   {
-    #     id: 2,
-    #     title: 'Christmas 2015',
-    #     location: 'Tampa',
-    #     latitude: 27.7708,
-    #     longitude: -82.6635
-    #   }
-    # ]
+    # # Make some json to return
+    # render json: {
+    #   albums: albums.map do |album|
+    #     {
+    #       id: album.id,
+    #       title: album.title,
+    #       location: album.location,
+    #       latitude: album.latitude.to_f,
+    #       longitude: album.longitude.to_f,
+    #       image: album.photos.first ? url_for(album.photos.first.image) : nil
+    #     }
+    #   end
+    # }
+  
   end
 end
