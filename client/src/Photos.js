@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import axios from 'axios'
 import x from './images/x.png'
 import camera from './images/camera.jpeg'
 import beach1 from './images/beach1.jpeg'
@@ -28,6 +29,13 @@ class Photos extends Component {
         }
       ]
     }
+  }
+
+  componentDidMount() {
+    axios.get('api/albums').then(response => {
+      console.log(response.data.albums)
+      // this.setState({ albums: response.data.albums })
+    })
   }
 
   render() {
@@ -76,32 +84,6 @@ class Photos extends Component {
               <img className="photoGalleryImage" src={beach2} alt="beach" />
               <img className="photoGalleryImage" src={beach3} alt="beach" />
               <img className="photoGalleryImage" src={beach4} alt="beach" />
-            </div>
-            <h4>
-              Fall 2014
-              <img className="photoPlus" src={plus_circle} alt="plus-circle" />
-            </h4>
-            <div className="photosGalleryImages">
-              <img
-                className="photoGalleryImage"
-                src={mountains1}
-                alt="mountain"
-              />
-              <img
-                className="photoGalleryImage"
-                src={mountains2}
-                alt="mountain"
-              />
-              <img
-                className="photoGalleryImage"
-                src={mountains3}
-                alt="mountain"
-              />
-              <img
-                className="photoGalleryImage"
-                src={mountains4}
-                alt="mountain"
-              />
             </div>
           </div>
         </main>

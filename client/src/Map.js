@@ -86,8 +86,8 @@ class Map extends Component {
               {...viewport}
               width="100%"
               height="100%"
-              mapStyle="mapbox://styles/myenny/cjqrnquxj0fg82qoc0dtbh1qm"
-              // "mapbox://styles/myenny/cjqpt2bff1pxp2spfrm20kr3o"
+              mapStyle="mapbox://styles/myenny/cjqpt2bff1pxp2spfrm20kr3o"
+              // "mapbox://styles/myenny/cjqrnquxj0fg82qoc0dtbh1qm"
 
               mapboxApiAccessToken="pk.eyJ1IjoibXllbm55IiwiYSI6ImNqcXBxOTB1bzAxbnozeHFvMnRpcG1leTkifQ.CySljohD9G8a5OpGc1QQjA"
               onViewportChange={this._updateViewport}

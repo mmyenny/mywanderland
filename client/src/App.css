@@ -1,6 +1,6 @@
 body {
-  /* background-color: rgb(1, 1, 78); */
-  background-color: #000000;
+  background-color: rgb(1, 1, 78);
+  /* background-color: #000000; */
 }
 
 canvas {
@@ -32,7 +32,7 @@ main.mainPage {
 .mainPage h1 {
   text-align: center;
   color: white;
-  text-shadow: 1.75px 1.75px #338be6;
+  /* text-shadow: 1.75px 1.75px #338be6; */
   font-family: billabong;
   font-size: 4rem;
   font-weight: 300;
