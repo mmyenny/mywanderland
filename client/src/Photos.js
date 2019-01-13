@@ -21,24 +21,49 @@ class Photos extends Component {
       albums: [
         {
           id: 1,
-          title: 'Summer Vacation'
+          title: 'Summer Vacation',
+          images: [
+            {
+              id: 1,
+              caption: 'Yearly camping lalapalooza - summer 2015',
+              image:
+                'http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4d371cfb35d008591513683db21d334b13b89e6d/mountains1.jpeg'
+            },
+            {
+              id: 2,
+              caption: 'Yearly camping',
+              image:
+                'http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--bcee84c731371d3927f95907b48399d64ec988d2/mountains2.jpeg'
+            }
+          ]
         },
         {
           id: 2,
-          title: 'Christmas 2015'
+          title: 'Christmas 2015',
+          images: [
+            {
+              id: 4,
+              caption: 'Hiking with friends',
+              image:
+                'http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--5d65e03fb3663dc385a2f0b96ed29bb1e056d1c0/mountains4.jpeg'
+            }
+          ]
         }
       ]
     }
   }
 
   componentDidMount() {
-    axios.get('api/albums').then(response => {
+    axios.get('/api/albums').then(response => {
       console.log(response.data.albums)
-      // this.setState({ albums: response.data.albums })
+      this.setState({ albums: response.data.albums })
     })
   }
 
   render() {
+    // const image = this.state.albums.image
+    console.log(this.state.albums)
+    // console.log(Object.keys(this.state.albums(image)))
     return (
       <div>
         <canvas />
@@ -62,15 +87,27 @@ class Photos extends Component {
           </div>
 
           <div className="photoGallerySection">
-            {this.state.albums.map(albums => (
-              <h4 key={albums.id}>
-                {albums.title}
-                <img
-                  className="photoPlus"
-                  src={plus_circle}
-                  alt="plus-circle"
-                />
-              </h4>
+            {this.state.albums.map(album => (
+              <>
+                <h4 key={album.id}>
+                  {album.title}
+                  <img
+                    className="photoPlus"
+                    src={plus_circle}
+                    alt="plus-circle"
+                  />
+                </h4>
+                <div className="photosGalleryImages">
+                  <div className="photoGalleryImage">
+                    {album.images.map((image, index) => (
+                      <figure>
+                        <img key={index} src={image.image} alt="" />
+                        <figcaption>{image.caption}</figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                </div>
+              </>
             ))}
 
             <h4>

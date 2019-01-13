@@ -11,14 +11,13 @@ class Api::AlbumsController < ApplicationController
         {
           id: album.id,
           title: album.title,
-          image: album.photos.map do |photo|
+          images: album.photos.map do |photo|
             {
               id: photo.id,
               caption: photo.caption,
               image: url_for(photo.image)
             }
           end
-
 
           # image: album.photos
 
