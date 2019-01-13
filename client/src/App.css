@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(1, 1, 78);
+  background-color: rgb(1, 1, 59);
   /* background-color: #000000; */
 }
 
@@ -32,11 +32,11 @@ main.mainPage {
 .mainPage h1 {
   text-align: center;
   color: white;
-  /* text-shadow: 1.75px 1.75px #338be6; */
+  text-shadow: 1.75px 1.75px #338be6;
   font-family: billabong;
   font-size: 4rem;
   font-weight: 300;
-  background-color: rgba(1, 1, 78, 0.6);
+  background-color: rgba(1, 1, 59, 0.5);
   border-radius: 42%;
   margin: 20px 175px 20px 175px;
 }
@@ -377,7 +377,7 @@ div.photoGallerySection {
   width: 20px;
 }
 
-div.photosGalleryImages {
+figure.photosGalleryImages {
   display: flex;
   flex-wrap: wrap;
   margin: 2px;
@@ -405,24 +405,4 @@ div.photo {
 .photo img {
   margin: 5px;
   width: 450px;
-}
-
-/* pinned map page */
-
-.pin {
-  margin-top: -170px;
-  margin-right: 120px;
-  width: 45px;
-}
-
-.pin1 {
-  margin-top: -200px;
-  margin-right: 200px;
-  width: 45px;
-}
-
-.pin2 {
-  margin-top: -100px;
-  margin-left: 200px;
-  width: 45px;
 }

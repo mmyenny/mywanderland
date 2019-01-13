@@ -7,7 +7,6 @@ import Login from './Login'
 import Pinpopup from './Pinpopup'
 import Signup from './Signup'
 import Introduction from './Introduction'
-import Pinnedmap from './Pinnedmap'
 import Photo from './Photo'
 
 class App extends Component {
@@ -21,7 +20,6 @@ class App extends Component {
           <Route path="/Signup/" component={Signup} />
           <Route path="/Map/" component={Map} />
           <Route path="/Pinpopup/" component={Pinpopup} />
-          <Route path="/Pinnedmap/" component={Pinnedmap} />
           <Route path="/Photos/:id" component={Photos} />
           <Route path="/Photo/" component={Photo} />
         </div>
