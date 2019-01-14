@@ -1,7 +1,7 @@
 class Api::PlacesController < ApplicationController
   def index
     # Get all the location
-    places = Place.all
+    places = Place.all.where.not(longitude: nil, latitude: nil)
 
 
     # Make some json to return

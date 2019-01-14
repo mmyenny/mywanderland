@@ -89,6 +89,11 @@ class Map extends Component {
     return (
       <div>
         <main className="mainPage">
+          <Link to="./Login">
+            <div className="logOutSection">
+              <div className="logOut">Log Out</div>
+            </div>
+          </Link>
           <h1>MyWanderland</h1>
           <form action="/api/places" method="post" onSubmit={this.createPlace}>
             <div className="inputBox">

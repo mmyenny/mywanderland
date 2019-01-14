@@ -19,11 +19,23 @@ class Api::AlbumsController < ApplicationController
             }
           end
 
-          # image: album.photos
-
           # image: album.photos.first ? url_for(album.photos.first.image) : nil
         }
       end
     }
+  end
+
+  def create
+    album = Album.create(albums_params)
+
+    render json: album
+  end
+
+  private
+
+  def albums_params
+    # <input name="album[title]"/>
+    # <input hidden name="album[place_id]"/>
+    params.require(:album).permit(:title, :place_id)
   end
 end

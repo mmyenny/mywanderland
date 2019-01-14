@@ -5,7 +5,6 @@ import Map from './Map'
 import Photos from './Photos'
 import Login from './Login'
 import Pinpopup from './Pinpopup'
-import Signup from './Signup'
 import Introduction from './Introduction'
 import Photo from './Photo'
 import Stars from './Stars'
@@ -24,7 +23,6 @@ class App extends Component {
           <div>
             <Route path="/" exact component={Login} />
             <Route path="/Login/" component={Login} />
-            <Route path="/Signup/" component={Signup} />
             <Route path="/Map/" component={Map} />
             <Route path="/Pinpopup/" component={Pinpopup} />
             <Route path="/Photos/:id" component={Photos} />

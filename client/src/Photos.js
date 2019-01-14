@@ -5,12 +5,8 @@ import x from './images/x.png'
 import camera from './images/camera.jpeg'
 import beach1 from './images/beach1.jpeg'
 import beach2 from './images/beach2.jpeg'
-import beach3 from './images/beach3.jpeg'
-import beach4 from './images/beach4.jpeg'
 import mountains1 from './images/mountains1.jpeg'
 import mountains2 from './images/mountains2.jpeg'
-import mountains3 from './images/mountains3.jpeg'
-import mountains4 from './images/mountains4.jpeg'
 import plus_circle from './images/plus-circle.png'
 
 class Photos extends Component {
@@ -23,6 +19,10 @@ class Photos extends Component {
   }
 
   componentDidMount() {
+    this.loadAlbums()
+  }
+
+  loadAlbums = () => {
     const id = this.props.match.params.id
 
     axios.get(`/api/albums/${id}`).then(response => {
@@ -30,6 +30,25 @@ class Photos extends Component {
     })
   }
 
+  createAlbum = event => {
+    // Don't let the BROWSER submit the form, we are in control
+    event.preventDefault()
+
+    // Get the form we are submitting
+    const form = event.target
+
+    // Make FormData to represent all the fields (given by the name attribute)
+    const formData = new FormData(form)
+
+    // Submit that formData to make a new album
+    axios.post('/api/albums', formData).then(response => {
+      // When that is done, load the albums
+      this.loadAlbums()
+
+      // Clear the form
+      form.reset()
+    })
+  }
   render() {
     // const image = this.state.albums.image
     console.log(this.state.albums)
@@ -46,12 +65,21 @@ class Photos extends Component {
                 alt="plus-circle"
               />
               <h4>Michelle Yenny</h4>
-              <input
-                type="text"
-                placeholder="Album Tilte"
-                name="album[title]"
-              />
-              <button>Create Album</button>
+              <form onSubmit={this.createAlbum}>
+                {/* Hidden field to store the place id */}
+                <input
+                  type="hidden"
+                  name="album[place_id]"
+                  value={this.props.match.params.id}
+                />
+
+                <input
+                  type="text"
+                  placeholder="Album Title"
+                  name="album[title]"
+                />
+                <button>Create Album</button>
+              </form>
             </div>
             <Link to="/Map">
               <div className="x">

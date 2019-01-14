@@ -13,10 +13,6 @@ canvas {
   left: 0;
 }
 
-li {
-  color: white;
-}
-
 @font-face {
   font-family: billabong;
   src: url(./images/Billabong.ttf);
@@ -26,6 +22,19 @@ main.mainPage {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+div.logOutSection {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+div.logOut {
+  justify-content: flex-end;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
 }
 
 .mainPage h1 {
@@ -46,12 +55,12 @@ main.mainPage {
   margin-bottom: 30px;
 }
 
-input {
+.inputBox input {
   border-radius: 5px;
-  outline-color: #003f56;
+  outline-color: #338be6;
 }
 
-button {
+.inputBox button {
   border-radius: 5px;
   margin-left: 5px;
   outline: none;
@@ -204,60 +213,6 @@ button.facebookLogIn {
   cursor: pointer;
 }
 
-/* Sign up page */
-
-main.signUpPage {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.signUpPage h1 {
-  text-align: center;
-  color: white;
-  text-shadow: 1.75px 1.75px #338be6;
-  font-family: billabong;
-  font-size: 4rem;
-  font-weight: 300;
-  background-color: rgba(1, 1, 78, 0.3);
-  border-radius: 42%;
-  margin: 20px 175px 20px 175px;
-}
-
-div.signUp {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 200px;
-  padding: 10px 0 10px 0;
-  margin: 25px 10px 10px 10px;
-  background-color: rgba(1, 1, 78, 0.6);
-  border: 1.25px solid rgba(255, 255, 255, 0.6);
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
-  border-radius: 10px;
-}
-
-.signUp input {
-  margin-top: 5px;
-  outline-color: #338be6;
-}
-
-.signUp button {
-  margin-top: 10px;
-  margin-left: 0;
-  width: 75px;
-  cursor: pointer;
-}
-
-.signUp a {
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 11px;
-  padding-top: 10px;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 /* Introduction */
 
 div.introduction {
@@ -293,6 +248,14 @@ div.introduction {
   border-radius: 5px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
+}
+
+.mapboxgl-popup {
+  z-index: 1;
+}
+
+div.mapboxgl-popup-content {
+  background-color: eceae4;
 }
 
 p {
@@ -358,6 +321,11 @@ main.photoGalleryPage {
   margin: 10px 0 10px 5px;
 }
 
+.profileBar input {
+  width: 100px;
+  margin: 5px;
+}
+
 .profileBar button {
   width: 100px;
   cursor: pointer;
@@ -380,13 +348,6 @@ div.photoGallerySection {
 .photoPlus {
   border-radius: 50%;
   width: 20px;
-}
-
-figure.photosGalleryImages {
-  /* display: flex;
-  flex-wrap: wrap; */
-  margin: 2px;
-  justify-content: center;
 }
 
 img.photoGalleryImage {
