@@ -23,7 +23,9 @@ class Photos extends Component {
   }
 
   componentDidMount() {
-    axios.get('/api/albums').then(response => {
+    const id = this.props.match.params.id
+
+    axios.get(`/api/albums/${id}`).then(response => {
       this.setState({ albums: response.data.albums })
     })
   }
@@ -64,35 +66,20 @@ class Photos extends Component {
                     alt="plus-circle"
                   />
                 </h4>
-                <div>
+                <div className="photosGalleryImages">
                   {album.images.map((image, index) => (
-                    <figure className="photosGalleryImages">
-                      <Link to={`/Photo/${image.id}`}>
-                        <img
-                          className="photoGalleryImage"
-                          key={index}
-                          src={image.image}
-                          alt=""
-                        />
-                      </Link>
-                    </figure>
+                    <Link to={`/Photo/${image.id}`}>
+                      <img
+                        className="photoGalleryImage"
+                        key={index}
+                        src={image.image}
+                        alt=""
+                      />
+                    </Link>
                   ))}
                 </div>
               </React.Fragment>
             ))}
-
-            <h4>
-              Summer 2017
-              <img className="photoPlus" src={plus_circle} alt="plus-circle" />
-            </h4>
-            <div className="photosGalleryImages">
-              <Link to="/Photo">
-                <img className="photoGalleryImage" src={beach1} alt="beach" />
-              </Link>
-              <img className="photoGalleryImage" src={beach2} alt="beach" />
-              <img className="photoGalleryImage" src={beach3} alt="beach" />
-              <img className="photoGalleryImage" src={beach4} alt="beach" />
-            </div>
           </div>
         </main>
       </div>

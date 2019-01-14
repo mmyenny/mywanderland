@@ -23,7 +23,7 @@ class Map extends Component {
   }
 
   componentDidMount() {
-    axios.get('api/places').then(response => {
+    axios.get('/api/places').then(response => {
       this.setState({ places: response.data.places })
     })
   }
@@ -85,8 +85,9 @@ class Map extends Component {
               {...viewport}
               width="100%"
               height="100%"
-              mapStyle="mapbox://styles/myenny/cjqvl0idq02pj2rqlkde63j57"
-              // "mapbox://styles/myenny/cjqrnquxj0fg82qoc0dtbh1qm"
+              mapStyle="mapbox://styles/myenny/cjqworl7h8tph2sk8neg86mwj"
+              // "mapbox://styles/myenny/cjqwnxgfv8swk2sk82tv2vbne"
+              // "mapbox://styles/myenny/cjqwn971n0cfk2spjn2e6pvzw"
 
               mapboxApiAccessToken="pk.eyJ1IjoibXllbm55IiwiYSI6ImNqcXBxOTB1bzAxbnozeHFvMnRpcG1leTkifQ.CySljohD9G8a5OpGc1QQjA"
               onViewportChange={this._updateViewport}

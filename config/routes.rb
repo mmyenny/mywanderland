@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get '/api/albums', to: 'api/albums#index'
+  get '/api/albums/:id', to: 'api/albums#index'
 
   get '/api/places', to: 'api/places#index'
   

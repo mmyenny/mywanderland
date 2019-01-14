@@ -1,9 +1,9 @@
 class Api::AlbumsController < ApplicationController
   def index
-    # Get all the location
-    albums = Album.all
+    # Get the specific album
+    place = Place.find(params[:id]) 
 
-    
+    albums = place.albums
 
     # Make some json to return
     render json: {
@@ -25,6 +25,5 @@ class Api::AlbumsController < ApplicationController
         }
       end
     }
-  
   end
 end
