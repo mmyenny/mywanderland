@@ -34,4 +34,16 @@ class Api::PlacesController < ApplicationController
     #   }
     # ]
   end
+
+  def create
+    place = Place.create(places_params)
+
+    render json: place
+  end
+
+  private
+
+  def places_params
+    params.require(:place).permit(:location)
+  end
 end

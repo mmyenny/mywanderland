@@ -46,6 +46,11 @@ class Photos extends Component {
                 alt="plus-circle"
               />
               <h4>Michelle Yenny</h4>
+              <input
+                type="text"
+                placeholder="Album Tilte"
+                name="album[title]"
+              />
               <button>Create Album</button>
             </div>
             <Link to="/Map">

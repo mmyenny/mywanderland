@@ -10,7 +10,7 @@ class Map extends Component {
     super(props)
 
     this.state = {
-      popupInfo: null,
+      clickedPlace: null,
       viewport: {
         latitude: 37.785164,
         longitude: -100,
@@ -23,6 +23,10 @@ class Map extends Component {
   }
 
   componentDidMount() {
+    this.loadAllThePlaces()
+  }
+
+  loadAllThePlaces = () => {
     axios.get('/api/places').then(response => {
       this.setState({ places: response.data.places })
     })
@@ -32,30 +36,44 @@ class Map extends Component {
     this.setState({ viewport })
   }
 
-  renderPopup() {
-    const { popupInfo } = this.state
+  renderClickedPlace() {
+    const { clickedPlace } = this.state
 
-    if (!popupInfo) {
+    if (!clickedPlace) {
       return
     }
+
     return (
       <Popup
         tipSize={5}
         anchor="top"
-        longitude={popupInfo.longitude}
-        latitude={popupInfo.latitude}
+        longitude={clickedPlace.longitude}
+        latitude={clickedPlace.latitude}
         closeOnClick={false}
-        onClose={() => this.setState({ popupInfo: null })}
+        onClose={() => this.setState({ clickedPlace: null })}
       >
         <div className="pinPopUp">
-          <p>{popupInfo.location}</p>
+          <p>{clickedPlace.location}</p>
           <img className="photoAlbumPreview" src={photo_album} alt="Place" />
-          <Link to={`/Photos/${popupInfo.id}`}>
+          <Link to={`/Photos/${clickedPlace.id}`}>
             <button>View Photos</button>
           </Link>
         </div>
       </Popup>
     )
+  }
+
+  createPlace = event => {
+    event.preventDefault()
+
+    const form = event.target
+
+    const formData = new FormData(form)
+
+    axios.post('/api/places', formData).then(response => {
+      this.loadAllThePlaces()
+      form.reset()
+    })
   }
 
   render() {
@@ -72,14 +90,14 @@ class Map extends Component {
       <div>
         <main className="mainPage">
           <h1>MyWanderland</h1>
-          <div className="inputBox">
-            <input placeholder="Enter City, State" />
-            <Link to="/Pinnedmap">
+          <form action="/api/places" method="post" onSubmit={this.createPlace}>
+            <div className="inputBox">
+              <input placeholder="Enter City, State" name="place[location]" />
               <button>
                 <i className="fas fa-map-pin" />
               </button>
-            </Link>
-          </div>
+            </div>
+          </form>
           <div className="map">
             <MapGL
               {...viewport}
@@ -96,7 +114,7 @@ class Map extends Component {
                 <NavigationControl onViewportChange={this._updateViewport} />
               </div>
 
-              {this.renderPopup()}
+              {this.renderClickedPlace()}
 
               {this.state.places.map(place => {
                 return (
@@ -106,7 +124,7 @@ class Map extends Component {
                     longitude={place.longitude}
                   >
                     <img
-                      onClick={() => this.setState({ popupInfo: place })}
+                      onClick={() => this.setState({ clickedPlace: place })}
                       width="30"
                       src={Pin}
                       alt="Pin"
