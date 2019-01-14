@@ -7,7 +7,6 @@ class Signup extends Component {
   render() {
     return (
       <div>
-        <canvas />
         <main className="signUpPage">
           <h1>MyWanderland</h1>
           <div className="signUp">

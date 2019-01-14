@@ -8,7 +8,6 @@ class Photo extends Component {
   render() {
     return (
       <div className="individualPhoto">
-        <canvas />
         <Link to="/Photos">
           <div className="x">
             <img src={x} alt="x" />

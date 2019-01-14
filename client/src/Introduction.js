@@ -4,7 +4,6 @@ class Introduction extends Component {
   render() {
     return (
       <div>
-        <canvas />
         <div className="introduction">
           <h1>Welcome to MyWanderland</h1>
           <p>

@@ -70,7 +70,6 @@ class Map extends Component {
 
     return (
       <div>
-        <canvas />
         <main className="mainPage">
           <h1>MyWanderland</h1>
           <div className="inputBox">
@@ -86,7 +85,7 @@ class Map extends Component {
               {...viewport}
               width="100%"
               height="100%"
-              mapStyle="mapbox://styles/myenny/cjqpt2bff1pxp2spfrm20kr3o"
+              mapStyle="mapbox://styles/myenny/cjqvl0idq02pj2rqlkde63j57"
               // "mapbox://styles/myenny/cjqrnquxj0fg82qoc0dtbh1qm"
 
               mapboxApiAccessToken="pk.eyJ1IjoibXllbm55IiwiYSI6ImNqcXBxOTB1bzAxbnozeHFvMnRpcG1leTkifQ.CySljohD9G8a5OpGc1QQjA"

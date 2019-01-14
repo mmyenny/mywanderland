@@ -1,6 +1,17 @@
-const main = () => {
-  var canvasDots = function() {
-    var canvas = document.querySelector('canvas'),
+import React from 'react'
+
+class Stars extends React.Component {
+  constructor(props) {
+    super(props)
+    this.canvasRef = React.createRef()
+  }
+
+  componentDidMount() {
+    this.canvasDots()
+  }
+
+  canvasDots() {
+    var canvas = this.canvasRef.current,
       ctx = canvas.getContext('2d'),
       colorDot = 'white',
       color = 'white'
@@ -17,7 +28,7 @@ const main = () => {
     }
 
     var dots = {
-      nb: 300,
+      nb: canvas.width / 3,
       distance: 50,
       d_radius: 150,
       array: []
@@ -41,7 +52,7 @@ const main = () => {
       },
 
       animate: function() {
-        for (i = 0; i < dots.nb; i++) {
+        for (let i = 0; i < dots.nb; i++) {
           var dot = dots.array[i]
 
           if (dot.y < 0 || dot.y > canvas.height) {
@@ -57,10 +68,10 @@ const main = () => {
       },
 
       line: function() {
-        for (i = 0; i < dots.nb; i++) {
-          for (j = 0; j < dots.nb; j++) {
-            i_dot = dots.array[i]
-            j_dot = dots.array[j]
+        for (let i = 0; i < dots.nb; i++) {
+          for (let j = 0; j < dots.nb; j++) {
+            let i_dot = dots.array[i]
+            let j_dot = dots.array[j]
 
             if (
               i_dot.x - j_dot.x < dots.distance &&
@@ -88,15 +99,15 @@ const main = () => {
 
     function createDots() {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
-      for (i = 0; i < dots.nb; i++) {
+      let dot
+      for (let i = 0; i < dots.nb; i++) {
         dots.array.push(new Dot())
         dot = dots.array[i]
 
         dot.create()
       }
-
-      dot.line()
       dot.animate()
+      dot.line()
     }
 
     window.onmousemove = function(parameter) {
@@ -110,9 +121,9 @@ const main = () => {
     setInterval(createDots, 1000 / 30)
   }
 
-  window.onload = function() {
-    canvasDots()
+  render() {
+    return <canvas ref={this.canvasRef} />
   }
 }
 
-document.addEventListener('DOMContentLoaded', main)
+export default Stars

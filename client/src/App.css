@@ -102,6 +102,12 @@ div.logIn {
   border-radius: 10px;
 }
 
+img.logo {
+  width: 80px;
+  margin-top: -50px;
+  margin-bottom: 10px;
+}
+
 .camera {
   width: 70px;
   border-radius: 50%;

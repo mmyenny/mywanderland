@@ -24,7 +24,6 @@ class Photos extends Component {
 
   componentDidMount() {
     axios.get('/api/albums').then(response => {
-      console.log(response.data.albums)
       this.setState({ albums: response.data.albums })
     })
   }
@@ -35,7 +34,6 @@ class Photos extends Component {
     // console.log(Object.keys(this.state.albums(image)))
     return (
       <div>
-        <canvas />
         <main className="photoGalleryPage">
           <div className="topBar">
             <div className="profileBar">
@@ -69,12 +67,14 @@ class Photos extends Component {
                 <div>
                   {album.images.map((image, index) => (
                     <figure className="photosGalleryImages">
-                      <img
-                        className="photoGalleryImage"
-                        key={index}
-                        src={image.image}
-                        alt=""
-                      />
+                      <Link to={`/Photo/${image.id}`}>
+                        <img
+                          className="photoGalleryImage"
+                          key={index}
+                          src={image.image}
+                          alt=""
+                        />
+                      </Link>
                     </figure>
                   ))}
                 </div>

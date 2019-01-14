@@ -8,22 +8,30 @@ import Pinpopup from './Pinpopup'
 import Signup from './Signup'
 import Introduction from './Introduction'
 import Photo from './Photo'
+import Stars from './Stars'
+
+import Auth from './auth'
+import history from './history'
+
+const auth = new Auth()
 
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div>
-          <canvas />
-          <Route path="/" exact component={Login} />
-          <Route path="/Login/" component={Login} />
-          <Route path="/Signup/" component={Signup} />
-          <Route path="/Map/" component={Map} />
-          <Route path="/Pinpopup/" component={Pinpopup} />
-          <Route path="/Photos/:id" component={Photos} />
-          <Route path="/Photo/" component={Photo} />
-        </div>
-      </Router>
+      <>
+        <Stars />
+        <Router>
+          <div>
+            <Route path="/" exact component={Login} />
+            <Route path="/Login/" component={Login} />
+            <Route path="/Signup/" component={Signup} />
+            <Route path="/Map/" component={Map} />
+            <Route path="/Pinpopup/" component={Pinpopup} />
+            <Route path="/Photos/:id" component={Photos} />
+            <Route path="/Photo/:id" component={Photo} />
+          </div>
+        </Router>
+      </>
     )
   }
 }

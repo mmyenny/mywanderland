@@ -2,17 +2,19 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import camera from './images/camera.jpeg'
 import plus_circle from './images/plus-circle.png'
+import logo from './images/logo1.png'
+import logo1 from './images/globe-icon.png'
 
 class Login extends Component {
   render() {
     return (
       <div>
-        <canvas />
         <main className="logInPage">
           <h1>MyWanderland</h1>
           <div className="logIn">
-            <img className="camera" src={camera} alt="profile" />
-            <img className="plus" src={plus_circle} alt="plus-circle" />
+            <img className="logo" src={logo} alt="logo" />
+            {/* <img className="camera" src={camera} alt="profile" />
+            <img className="plus" src={plus_circle} alt="plus-circle" /> */}
             <input placeholder="Username" /> <input placeholder="Password" />
             <Link to="/Map">
               <button>Log in</button>
