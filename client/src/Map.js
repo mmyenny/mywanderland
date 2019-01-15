@@ -5,6 +5,8 @@ import axios from 'axios'
 import Pin from './images/pin.png'
 import photo_album from './images/photo-album1.png'
 
+import Pin1 from './images/pins.png'
+
 class Map extends Component {
   constructor(props) {
     super(props)
@@ -134,8 +136,8 @@ class Map extends Component {
                   >
                     <img
                       onClick={() => this.setState({ clickedPlace: place })}
-                      width="30"
-                      src={Pin}
+                      width="15"
+                      src={Pin1}
                       alt="Pin"
                     />
                   </Marker>

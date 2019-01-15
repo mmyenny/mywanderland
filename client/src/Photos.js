@@ -49,6 +49,22 @@ class Photos extends Component {
       form.reset()
     })
   }
+
+  addPhotoToAlbum = event => {
+    event.preventDefault()
+
+    const form = event.target
+
+    const formData = new FormData(form)
+
+    axios.post('/api/photos', formData).then(response => {
+      // When that is done, load the albums
+      this.loadAlbums()
+
+      form.reset()
+    })
+  }
+
   render() {
     return (
       <div>
@@ -98,6 +114,21 @@ class Photos extends Component {
                     alt="plus-circle"
                   />
                 </h4>
+                <form onSubmit={this.addPhotoToAlbum}>
+                  <input
+                    type="hidden"
+                    name="photo[album_id]"
+                    value={album.id}
+                  />
+                  <input type="file" name="photo[image]" />
+                  <input
+                    type="text"
+                    placeholder="Add an Image Caption"
+                    name="photo[caption]"
+                    autoComplete="off"
+                  />
+                  <button>Create Photo</button>
+                </form>
                 <div className="photosGalleryImages">
                   {album.images.map((image, index) => (
                     <Link to={`/Photo/${image.id}`}>

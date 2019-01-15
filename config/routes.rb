@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   
   get '/api/photos', to: 'api/photos#index'
   get '/api/photos/:id', to: 'api/photos#show'
+  post '/api/photos', to: 'api/photos#create'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   if Rails.env.production?

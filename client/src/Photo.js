@@ -31,10 +31,12 @@ class Photo extends Component {
       return <></>
     }
 
+    const photoID = this.props.match.params.id
+
     return (
       <div className="individualPhoto">
         <div className="photoPageX">
-          <Link className="photoPageX" to="/Photos">
+          <Link className="photoPageX" to={`/Photos/${photoID}`}>
             X
           </Link>
         </div>

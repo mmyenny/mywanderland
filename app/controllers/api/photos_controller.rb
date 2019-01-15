@@ -25,4 +25,16 @@ class Api::PhotosController < ApplicationController
       }
     }
   end
+
+  def create
+    photo = Photo.create(photos_params)
+
+    render json: photo
+  end
+
+  private
+
+  def photos_params
+    params.require(:photo).permit(:caption, :album_id, :image)
+  end
 end
