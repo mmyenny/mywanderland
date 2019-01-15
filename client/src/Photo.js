@@ -13,8 +13,7 @@ class Photo extends Component {
   }
 
   componentWillMount() {
-    const photoID = this.props.match.params.id
-    console.log(photoID)
+    const photoID = this.props.match.params.photo_id
 
     // use axios to fetch the API and update state
     axios.get(`/api/photos/${photoID}`).then(response => {
@@ -31,12 +30,15 @@ class Photo extends Component {
       return <></>
     }
 
-    const photoID = this.props.match.params.id
+    const photoID = this.props.match.params.photo_id
 
     return (
       <div className="individualPhoto">
         <div className="photoPageX">
-          <Link className="photoPageX" to={`/Photos/${photoID}`}>
+          <Link
+            className="photoPageX"
+            to={`/Places/${this.props.match.params.place_id}`}
+          >
             X
           </Link>
         </div>

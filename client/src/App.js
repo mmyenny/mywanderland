@@ -26,8 +26,12 @@ class App extends Component {
             <Route path="/Login/" component={Login} />
             <Route path="/Map/" component={Map} />
             <Route path="/Pinpopup/" component={Pinpopup} />
-            <Route path="/Photos/:id" component={Photos} />
-            <Route path="/Photo/:id" component={Photo} />
+            <Route exact path="/Places/:place_id" component={Photos} />
+            <Route
+              exact
+              path="/Places/:place_id/photos/:photo_id"
+              component={Photo}
+            />
             <Footer />
           </div>
         </Router>

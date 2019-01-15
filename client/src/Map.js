@@ -8,6 +8,11 @@ import photo_album from './images/photo-album1.png'
 import Pin1 from './images/pins.png'
 
 class Map extends Component {
+  smallestPinSize = 20
+  largestPinSize = 30
+  mostZoomedOut = 2.5
+  mostZoomedIn = 11.5
+
   constructor(props) {
     super(props)
 
@@ -16,12 +21,36 @@ class Map extends Component {
       viewport: {
         latitude: 37.785164,
         longitude: -100,
-        zoom: 2.5,
+        zoom: this.mostZoomedOut,
         bearing: 0,
         pitch: 0
       },
       places: []
     }
+  }
+
+  markerSize = () => {
+    const scaleFactor =
+      (this.smallestPinSize - this.largestPinSize) /
+      (this.mostZoomedIn - this.mostZoomedOut)
+
+    const size =
+      this.largestPinSize +
+      scaleFactor * (this.state.viewport.zoom - this.mostZoomedOut)
+
+    // If it is too small
+    if (size < this.smallestPinSize) {
+      // make the size the smallest size
+      return this.smallestPinSize
+    }
+
+    // If it is too big
+    if (size > this.largestPinSize) {
+      // make the size the biggest size
+      return this.largestPinSize
+    }
+
+    return size
   }
 
   componentDidMount() {
@@ -51,13 +80,15 @@ class Map extends Component {
         anchor="top"
         longitude={clickedPlace.longitude}
         latitude={clickedPlace.latitude}
+        offsetTop={this.markerSize() / 2.0}
+        offsetLeft={this.markerSize() / 2.0}
         closeOnClick={false}
         onClose={() => this.setState({ clickedPlace: null })}
       >
         <div className="pinPopUp">
           <p className="pinPopUp">{clickedPlace.location}</p>
           <img className="photoAlbumPreview" src={photo_album} alt="Place" />
-          <Link to={`/Photos/${clickedPlace.id}`}>
+          <Link to={`/Places/${clickedPlace.id}`}>
             <button className="pinPopUp">View Photos</button>
           </Link>
         </div>
@@ -121,10 +152,6 @@ class Map extends Component {
               mapboxApiAccessToken="pk.eyJ1IjoibXllbm55IiwiYSI6ImNqcXBxOTB1bzAxbnozeHFvMnRpcG1leTkifQ.CySljohD9G8a5OpGc1QQjA"
               onViewportChange={this._updateViewport}
             >
-              <div className="nav" style={navStyle}>
-                <NavigationControl onViewportChange={this._updateViewport} />
-              </div>
-
               {this.renderClickedPlace()}
 
               {this.state.places.map(place => {
@@ -133,16 +160,22 @@ class Map extends Component {
                     key={place.id}
                     latitude={place.latitude}
                     longitude={place.longitude}
+                    offsetLeft={(-1 * this.markerSize()) / 2.0}
+                    offsetRight={(-1 * this.markerSize()) / 2.0}
                   >
                     <img
                       onClick={() => this.setState({ clickedPlace: place })}
-                      width="15"
+                      width={this.markerSize()}
                       src={Pin1}
                       alt="Pin"
                     />
                   </Marker>
                 )
               })}
+
+              <div className="nav" style={navStyle}>
+                <NavigationControl onViewportChange={this._updateViewport} />
+              </div>
             </MapGL>
           </div>
         </main>

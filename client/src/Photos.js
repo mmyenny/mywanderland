@@ -23,9 +23,9 @@ class Photos extends Component {
   }
 
   loadAlbums = () => {
-    const id = this.props.match.params.id
+    const place_id = this.props.match.params.place_id
 
-    axios.get(`/api/albums/${id}`).then(response => {
+    axios.get(`/api/albums/${place_id}`).then(response => {
       this.setState({ albums: response.data.albums })
     })
   }
@@ -131,10 +131,14 @@ class Photos extends Component {
                 </form>
                 <div className="photosGalleryImages">
                   {album.images.map((image, index) => (
-                    <Link to={`/Photo/${image.id}`}>
+                    <Link
+                      key={index}
+                      to={`/Places/${this.props.match.params.place_id}/photos/${
+                        image.id
+                      }`}
+                    >
                       <img
                         className="photoGalleryImage"
-                        key={index}
                         src={image.image}
                         alt=""
                       />
