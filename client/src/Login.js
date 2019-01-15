@@ -13,26 +13,13 @@ class Login extends Component {
           <h1>MyWanderland</h1>
           <div className="logIn">
             <img className="logo" src={logo} alt="logo" />
-            {/* <img className="camera" src={camera} alt="profile" />
-            <img className="plus" src={plus_circle} alt="plus-circle" /> */}
-            <input placeholder="Username" /> <input placeholder="Password" />
             <Link to="/Map">
-              <button>Log in</button>
+              <button className="googleLogIn">Log in with Google</button>
             </Link>
-            <div className="logInOptions">
-              <label for="Remember me" className="logInOptions">
-                <input id="Remember me" type="checkbox" /> Remember me
-              </label>
-              <Link to="/Signup">Sign up here</Link>
-            </div>
+            <Link to="/Map">
+              <button className="facebookLogIn">Log in with Facebook</button>
+            </Link>
           </div>
-          <div className="logInOr">
-            <div className="logInOrLine" />
-            <h4>OR</h4>
-            <div className="logInOrLine" />
-          </div>
-          <button className="googleLogIn">Log in with Google</button>
-          <button className="facebookLogIn">Log in with Facebook</button>
         </main>
       </div>
     )

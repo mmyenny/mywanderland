@@ -27,14 +27,15 @@ main.mainPage {
 div.logOutSection {
   display: flex;
   justify-content: flex-end;
-  width: 100%;
+  width: 100vw;
 }
 
-div.logOut {
+p.logOut {
   justify-content: flex-end;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
+  padding-right: 10px;
 }
 
 a {
@@ -105,7 +106,7 @@ div.logIn {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 200px;
+  width: 250px;
   padding: 10px 0 10px 0;
   margin: 25px 10px 10px 10px;
   background-color: rgba(1, 1, 59, 0.6);
@@ -135,67 +136,6 @@ img.logo {
   margin-bottom: 5px;
 }
 
-.logIn input {
-  margin-top: 5px;
-  outline-color: #338be6;
-}
-
-.logIn button {
-  margin-top: 10px;
-  margin-left: 0;
-  width: 75px;
-  cursor: pointer;
-}
-
-div.logInOptions {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
-}
-
-.logInOptions label {
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 11px;
-  padding-top: 10px;
-  cursor: pointer;
-}
-
-label.logInOptions {
-  display: flex;
-  align-items: center;
-}
-
-.logInOptions a {
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 11px;
-  padding-top: 10px;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-div.logInOr {
-  display: flex;
-  align-items: center;
-}
-
-.logInOr h4 {
-  margin-left: 5px;
-  margin-right: 5px;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-div.logInOrLine {
-  height: 1px;
-  width: 55px;
-  background-color: rgba(255, 255, 255, 0.6);
-}
-
 button.googleLogIn {
   color: white;
   background-color: #3a88ed;
@@ -214,6 +154,7 @@ button.facebookLogIn {
   font-size: 15px;
   height: 25px;
   width: 200px;
+  margin-bottom: 15px;
   cursor: pointer;
 }
 

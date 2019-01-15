@@ -91,7 +91,7 @@ class Map extends Component {
         <main className="mainPage">
           <Link to="./Login">
             <div className="logOutSection">
-              <div className="logOut">Log Out</div>
+              <p className="logOut">Log Out</p>
             </div>
           </Link>
           <h1>MyWanderland</h1>
