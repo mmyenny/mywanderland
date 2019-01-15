@@ -34,12 +34,12 @@ class Photo extends Component {
 
     return (
       <div className="individualPhoto">
-        <div className="photoPageX">
+        <div className="photoPageBack">
           <Link
-            className="photoPageX"
+            className="photoPageBack"
             to={`/Places/${this.props.match.params.place_id}`}
           >
-            X
+            back
           </Link>
         </div>
 

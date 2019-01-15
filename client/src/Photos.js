@@ -8,6 +8,7 @@ import beach2 from './images/beach2.jpeg'
 import mountains1 from './images/mountains1.jpeg'
 import mountains2 from './images/mountains2.jpeg'
 import plus_circle from './images/plus-circle.png'
+import minus_circle from './images/minus-circle.png'
 
 class Photos extends Component {
   constructor(props) {
@@ -16,7 +17,8 @@ class Photos extends Component {
     this.state = {
       user: {},
       albums: [],
-      loaded: false
+      loaded: false,
+      addPhotoFormVisible: false
     }
   }
 
@@ -71,6 +73,12 @@ class Photos extends Component {
     })
   }
 
+  toggleAddPhotoForm = () => {
+    this.setState({
+      addPhotoFormVisible: !this.state.addPhotoFormVisible
+    })
+  }
+
   render() {
     if (!this.state.loaded) {
       return <></>
@@ -122,27 +130,40 @@ class Photos extends Component {
               <React.Fragment key={album.id}>
                 <h4 className="photoGallerySection">
                   {album.title}
-                  <img
-                    className="photoPlus"
-                    src={plus_circle}
-                    alt="plus-circle"
-                  />
+                  {!this.state.addPhotoFormVisible && (
+                    <img
+                      className="photoPlus"
+                      src={plus_circle}
+                      alt="plus-circle"
+                      onClick={this.toggleAddPhotoForm}
+                    />
+                  )}
+                  {this.state.addPhotoFormVisible && (
+                    <img
+                      className="photoPlus"
+                      src={minus_circle}
+                      alt="plus-circle"
+                      onClick={this.toggleAddPhotoForm}
+                    />
+                  )}
                 </h4>
-                <form onSubmit={this.addPhotoToAlbum}>
-                  <input
-                    type="hidden"
-                    name="photo[album_id]"
-                    value={album.id}
-                  />
-                  <input type="file" name="photo[image]" />
-                  <input
-                    type="text"
-                    placeholder="Add an Image Caption"
-                    name="photo[caption]"
-                    autoComplete="off"
-                  />
-                  <button>Create Photo</button>
-                </form>
+                {this.state.addPhotoFormVisible && (
+                  <form onSubmit={this.addPhotoToAlbum}>
+                    <input
+                      type="hidden"
+                      name="photo[album_id]"
+                      value={album.id}
+                    />
+                    <input type="file" name="photo[image]" />
+                    <input
+                      type="text"
+                      placeholder="Add an Image Caption"
+                      name="photo[caption]"
+                      autoComplete="off"
+                    />
+                    <button>Create Photo</button>
+                  </form>
+                )}
                 <div className="photosGalleryImages">
                   {album.images.map((image, index) => (
                     <Link
