@@ -50,9 +50,6 @@ class Photos extends Component {
     })
   }
   render() {
-    // const image = this.state.albums.image
-    console.log(this.state.albums)
-    // console.log(Object.keys(this.state.albums(image)))
     return (
       <div>
         <main className="photoGalleryPage">
@@ -77,6 +74,7 @@ class Photos extends Component {
                   type="text"
                   placeholder="Album Title"
                   name="album[title]"
+                  autoComplete="off"
                 />
                 <button>Create Album</button>
               </form>

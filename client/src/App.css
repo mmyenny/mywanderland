@@ -37,6 +37,10 @@ div.logOut {
   font-size: 14px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .mainPage h1 {
   text-align: center;
   color: white;
@@ -369,6 +373,7 @@ div.photo {
 }
 
 .photo img {
-  margin: 5px;
+  margin-top: 25px;
   width: 450px;
+  height: 450px;
 }

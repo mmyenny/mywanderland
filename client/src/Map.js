@@ -97,7 +97,12 @@ class Map extends Component {
           <h1>MyWanderland</h1>
           <form action="/api/places" method="post" onSubmit={this.createPlace}>
             <div className="inputBox">
-              <input placeholder="Enter City, State" name="place[location]" />
+              <input
+                type="text"
+                placeholder="Enter City, State"
+                name="place[location]"
+                autoComplete="off"
+              />
               <button>
                 <i className="fas fa-map-pin" />
               </button>
