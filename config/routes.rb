@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   post '/api/places', to: 'api/places#create'
   get '/api/places', to: 'api/places#index'
   
-  get '/api/photos', to: 'api/places#index'
+  get '/api/photos', to: 'api/photos#index'
+  get '/api/photos/:id', to: 'api/photos#show'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   if Rails.env.production?
