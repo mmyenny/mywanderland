@@ -61,7 +61,7 @@ class Photos extends Component {
                 src={plus_circle}
                 alt="plus-circle"
               />
-              <h4>Michelle Yenny</h4>
+              <h4 className="profileBar">Michelle Yenny</h4>
               <form onSubmit={this.createAlbum}>
                 {/* Hidden field to store the place id */}
                 <input
@@ -71,17 +71,18 @@ class Photos extends Component {
                 />
 
                 <input
+                  className="profileBar"
                   type="text"
                   placeholder="Album Title"
                   name="album[title]"
                   autoComplete="off"
                 />
-                <button>Create Album</button>
+                <button className="profileBar">Create Album</button>
               </form>
             </div>
             <Link to="/Map">
               <div className="x">
-                <img src={x} alt="x" />
+                <img className="x" src={x} alt="x" />
               </div>
             </Link>
           </div>
@@ -89,7 +90,7 @@ class Photos extends Component {
           <div className="photoGallerySection">
             {this.state.albums.map(album => (
               <React.Fragment key={album.id}>
-                <h4>
+                <h4 className="photoGallerySection">
                   {album.title}
                   <img
                     className="photoPlus"

@@ -11,6 +11,7 @@ import Stars from './Stars'
 
 import Auth from './auth'
 import history from './history'
+import Footer from './Footer'
 
 const auth = new Auth()
 
@@ -20,13 +21,14 @@ class App extends Component {
       <>
         <Stars />
         <Router>
-          <div>
+          <div className="App">
             <Route path="/" exact component={Login} />
             <Route path="/Login/" component={Login} />
             <Route path="/Map/" component={Map} />
             <Route path="/Pinpopup/" component={Pinpopup} />
             <Route path="/Photos/:id" component={Photos} />
             <Route path="/Photo/:id" component={Photo} />
+            <Footer />
           </div>
         </Router>
       </>

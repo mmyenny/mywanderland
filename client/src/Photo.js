@@ -21,15 +21,15 @@ class Photo extends Component {
   render() {
     return (
       <div className="individualPhoto">
-        <Link to="/Photos">
-          <div className="x">
-            <img src={x} alt="x" />
-          </div>
-        </Link>
+        <div className="photoPageX">
+          <Link className="photoPageX" to="/Photos">
+            X
+          </Link>
+        </div>
 
         {this.state.photos.map((photo, index) => (
           <div className="photo">
-            <img key={index} src={photo.image} alt="" />
+            <img className="photo" key={index} src={photo.image} alt="" />
             <h4> {photo.caption} </h4>
           </div>
         ))}

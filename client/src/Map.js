@@ -53,10 +53,10 @@ class Map extends Component {
         onClose={() => this.setState({ clickedPlace: null })}
       >
         <div className="pinPopUp">
-          <p>{clickedPlace.location}</p>
+          <p className="pinPopUp">{clickedPlace.location}</p>
           <img className="photoAlbumPreview" src={photo_album} alt="Place" />
           <Link to={`/Photos/${clickedPlace.id}`}>
-            <button>View Photos</button>
+            <button className="pinPopUp">View Photos</button>
           </Link>
         </div>
       </Popup>
@@ -89,21 +89,23 @@ class Map extends Component {
     return (
       <div>
         <main className="mainPage">
-          <Link to="./Login">
-            <div className="logOutSection">
+          <div className="logOutSection">
+            <Link to="./Login">
               <p className="logOut">Log Out</p>
-            </div>
-          </Link>
-          <h1>MyWanderland</h1>
+            </Link>
+          </div>
+
+          <h1 className="mainPage">MyWanderland</h1>
           <form action="/api/places" method="post" onSubmit={this.createPlace}>
             <div className="inputBox">
               <input
+                className="inputBox"
                 type="text"
                 placeholder="Enter City, State"
                 name="place[location]"
                 autoComplete="off"
               />
-              <button>
+              <button className="inputBox">
                 <i className="fas fa-map-pin" />
               </button>
             </div>
@@ -114,9 +116,6 @@ class Map extends Component {
               width="100%"
               height="100%"
               mapStyle="mapbox://styles/myenny/cjqworl7h8tph2sk8neg86mwj"
-              // "mapbox://styles/myenny/cjqwnxgfv8swk2sk82tv2vbne"
-              // "mapbox://styles/myenny/cjqwn971n0cfk2spjn2e6pvzw"
-
               mapboxApiAccessToken="pk.eyJ1IjoibXllbm55IiwiYSI6ImNqcXBxOTB1bzAxbnozeHFvMnRpcG1leTkifQ.CySljohD9G8a5OpGc1QQjA"
               onViewportChange={this._updateViewport}
             >

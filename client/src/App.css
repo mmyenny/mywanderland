@@ -2,6 +2,25 @@ body {
   background-color: rgb(1, 1, 59);
 }
 
+html,
+.App,
+#root,
+body {
+  min-height: 100vh;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.columnCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 canvas {
   position: absolute;
   width: 100%;
@@ -22,6 +41,7 @@ main.mainPage {
   display: flex;
   align-items: center;
   flex-direction: column;
+  text-align: center;
 }
 
 div.logOutSection {
@@ -36,14 +56,14 @@ p.logOut {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   padding-right: 10px;
+  margin: 0;
 }
 
 a {
   text-decoration: none;
 }
 
-.mainPage h1 {
-  text-align: center;
+h1.mainPage {
   color: white;
   text-shadow: 1.75px 1.75px #338be6;
   font-family: billabong;
@@ -51,21 +71,21 @@ a {
   font-weight: 300;
   background-color: rgba(1, 1, 59, 0.5);
   border-radius: 42%;
-  margin: 20px 175px 20px 175px;
+  margin: 10px 175px 10px 175px;
 }
 
-.inputBox {
+div.inputBox {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
-.inputBox input {
+input.inputBox {
   border-radius: 5px;
   outline-color: #338be6;
 }
 
-.inputBox button {
+button.inputBox {
   border-radius: 5px;
   margin-left: 5px;
   outline: none;
@@ -74,9 +94,9 @@ a {
 .fa-map-pin {
 }
 
-.map {
-  width: 550px;
-  height: 400px;
+div.map {
+  width: 310px;
+  height: 250px;
   border: 2.5px solid white;
   box-shadow: 0 0 10px white;
   border-radius: 5px;
@@ -90,7 +110,7 @@ main.logInPage {
   flex-direction: column;
 }
 
-.logInPage h1 {
+h1.logInPage {
   text-align: center;
   color: white;
   text-shadow: 1.75px 1.75px #338be6;
@@ -99,7 +119,7 @@ main.logInPage {
   font-weight: 300;
   background-color: rgba(1, 1, 59, 0.3);
   border-radius: 42%;
-  margin: 20px 175px 20px 175px;
+  margin: 20px 175px 50px 175px;
 }
 
 div.logIn {
@@ -158,7 +178,7 @@ button.facebookLogIn {
   cursor: pointer;
 }
 
-/* Introduction */
+/* Introduction
 
 div.introduction {
   display: flex;
@@ -180,17 +200,17 @@ div.introduction {
   margin: 10px;
   width: 75px;
   cursor: pointer;
-}
+} */
 
 /* pin-popUp page */
 
-.pinPopUp {
+div.pinPopUp {
   display: flex;
   flex-direction: column;
   background-color: #eceae4;
-  width: 13rem;
+  width: 140px;
+  height: 120px;
   align-items: center;
-  border-radius: 5px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
 }
@@ -200,26 +220,156 @@ div.introduction {
 }
 
 div.mapboxgl-popup-content {
-  background-color: eceae4;
+  background-color: #eceae4;
+  border-radius: 5px;
 }
 
-p {
+p.pinPopUp {
   margin: 0;
 }
 
 img.photoAlbumPreview {
   max-height: 100px;
   max-width: 100px;
-  margin-top: 5px;
+  margin: 0;
 }
 
-.pinPopUp button {
+button.pinPopUp {
   width: 100px;
-  margin: 10px;
+  /* margin: 10px; */
   cursor: pointer;
 }
 
 /* photo gallery page */
+
+img.x {
+  width: 15px;
+  height: 15px;
+  padding: 10px;
+}
+
+main.photoGalleryPage {
+  display: flex;
+  flex-wrap: wrap;
+  background: white;
+  border-radius: 5px;
+}
+
+div.topBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+div.profileBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img.profileImage {
+  width: 70px;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+img.profilePlus {
+  border-radius: 50%;
+  width: 20px;
+  margin-top: -15px;
+  margin-left: 43px;
+}
+
+h4.profileBar {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 550;
+  margin: 10px 0 10px 5px;
+}
+
+input.profileBar {
+  width: 100px;
+  margin: 5px;
+}
+
+button.profileBar {
+  width: 100px;
+  cursor: pointer;
+}
+
+div.photoGallerySection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+h4.photoGallerySection {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 550;
+}
+
+img.photoPlus {
+  border-radius: 50%;
+  width: 20px;
+}
+
+div.photosGalleryImages {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+img.photoGalleryImage {
+  margin: 2px;
+  height: 100px;
+  width: 125px;
+}
+
+/* individual photo page */
+
+div.photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: 5px;
+  width: 310px;
+  min-height: 300px;
+  margin: 20px;
+}
+
+img.photo {
+  margin-top: 10px;
+  width: 290px;
+  height: 280px;
+}
+
+div.photoPageX {
+  display: flex;
+  justify-content: flex-end;
+}
+a.photoPageX {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Footer */
+
+footer {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* media */
+/* 
+Full screen size perfect
+
+photo gallery page
 
 .x img {
   width: 15px;
@@ -301,7 +451,7 @@ img.photoGalleryImage {
   width: 125px;
 }
 
-/* individual photo page */
+Individual photo page
 
 div.photo {
   display: flex;
@@ -313,8 +463,8 @@ div.photo {
   margin: 20px;
 }
 
-.photo img {
+img.photo {
   margin-top: 25px;
   width: 450px;
   height: 450px;
-}
+} */

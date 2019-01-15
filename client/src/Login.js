@@ -10,7 +10,7 @@ class Login extends Component {
     return (
       <div>
         <main className="logInPage">
-          <h1>MyWanderland</h1>
+          <h1 className="logInPage">MyWanderland</h1>
           <div className="logIn">
             <img className="logo" src={logo} alt="logo" />
             <Link to="/Map">
