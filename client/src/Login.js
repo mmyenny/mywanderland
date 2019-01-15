@@ -12,10 +12,10 @@ class Login extends Component {
           <h1 className="logInPage">MyWanderland</h1>
           <div className="logIn">
             <img className="logo" src={logo} alt="logo" />
-            <Link to="/Map">
+            <Link to="/login">
               <button className="googleLogIn">Log in with Google</button>
             </Link>
-            <Link to="/Map">
+            <Link to="/login">
               <button className="facebookLogIn">Log in with Facebook</button>
             </Link>
           </div>

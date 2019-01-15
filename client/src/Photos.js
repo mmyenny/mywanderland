@@ -14,7 +14,9 @@ class Photos extends Component {
     super(props)
 
     this.state = {
-      albums: []
+      user: {},
+      albums: [],
+      loaded: false
     }
   }
 
@@ -26,7 +28,11 @@ class Photos extends Component {
     const place_id = this.props.match.params.place_id
 
     axios.get(`/api/albums/${place_id}`).then(response => {
-      this.setState({ albums: response.data.albums })
+      this.setState({
+        loaded: true,
+        albums: response.data.albums,
+        user: response.data.user
+      })
     })
   }
 
@@ -66,24 +72,32 @@ class Photos extends Component {
   }
 
   render() {
+    if (!this.state.loaded) {
+      return <></>
+    }
+
     return (
       <div>
         <main className="photoGalleryPage">
           <div className="topBar">
             <div className="profileBar">
-              <img className="profileImage" src={camera} alt="profile" />
+              <img
+                className="profileImage"
+                src={this.state.user.profile_image}
+                alt="profile"
+              />
               <img
                 className="profilePlus"
                 src={plus_circle}
                 alt="plus-circle"
               />
-              <h4 className="profileBar">Michelle Yenny</h4>
+              <h4 className="profileBar">{this.state.user.name}</h4>
               <form onSubmit={this.createAlbum}>
                 {/* Hidden field to store the place id */}
                 <input
                   type="hidden"
                   name="album[place_id]"
-                  value={this.props.match.params.id}
+                  value={this.props.match.params.place_id}
                 />
 
                 <input

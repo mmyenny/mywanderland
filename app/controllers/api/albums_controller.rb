@@ -1,12 +1,17 @@
 class Api::AlbumsController < ApplicationController
   def index
     # Get the specific album
-    place = Place.find(params[:id]) 
+    place = current_user.places.find(params[:id]) 
 
     albums = place.albums
 
     # Make some json to return
     render json: {
+      user: {
+        id: current_user.id,
+        name: current_user.name,
+        profile_image: url_for(current_user.profile_image)
+      },
       albums: albums.map do |album|
         {
           id: album.id,
@@ -26,7 +31,11 @@ class Api::AlbumsController < ApplicationController
   end
 
   def create
-    album = Album.create(albums_params)
+    # Find the place given by place_id amongst the user's places
+    place = current_user.places.find(albums_params[:place_id])
+
+    # For that place, create a new album
+    album = place.albums.create(albums_params)
 
     render json: album
   end

@@ -1,8 +1,7 @@
 class Api::PlacesController < ApplicationController
   def index
     # Get all the location
-    places = Place.all.where.not(longitude: nil, latitude: nil)
-
+    places = current_user.places.where.not(longitude: nil, latitude: nil)
 
     # Make some json to return
     render json: {
@@ -36,7 +35,7 @@ class Api::PlacesController < ApplicationController
   end
 
   def create
-    place = Place.create(places_params)
+    place = current_user.places.create(places_params)
 
     render json: place
   end

@@ -1,4 +1,5 @@
 class Place < ApplicationRecord
+  belongs_to :user
   has_many :albums
 
   geocoded_by :location

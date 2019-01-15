@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import MapGL, { Marker, Popup, NavigationControl } from 'react-map-gl'
+import history from './history'
 import axios from 'axios'
 import Pin from './images/pin.png'
 import photo_album from './images/photo-album1.png'
 
 import Pin1 from './images/pins.png'
+import auth from './auth'
 
 class Map extends Component {
   smallestPinSize = 20
@@ -54,6 +56,11 @@ class Map extends Component {
   }
 
   componentDidMount() {
+    if (!auth.isAuthenticated()) {
+      history.replace('/')
+      return
+    }
+
     this.loadAllThePlaces()
   }
 
@@ -123,7 +130,7 @@ class Map extends Component {
       <div>
         <main className="mainPage">
           <div className="logOutSection">
-            <Link to="./Login">
+            <Link to="/logout">
               <p className="logOut">Log Out</p>
             </Link>
           </div>

@@ -1,10 +1,10 @@
 import auth0 from 'auth0-js'
 import history from './history'
 
-const DOMAIN = 'OURAPP.auth0.com'
-const CLIENTID = 'xxxxxxxxx'
+const DOMAIN = 'michelleyenny.auth0.com'
+const CLIENTID = '3PbrJtmtQRLKyO5qHIl3GXN7jUU0HdkE'
 
-export default class Auth {
+class Auth {
   userProfile
 
   auth0 = new auth0.WebAuth({
@@ -37,11 +37,16 @@ export default class Auth {
     history.replace('/')
   }
 
-  handleAuthentication() {
+  handleAuthentication(callback) {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult)
-        history.replace('/')
+
+        if (callback) {
+          callback()
+        }
+
+        history.replace('/Map')
       } else if (err) {
         history.replace('/')
         console.log(err)
@@ -66,6 +71,14 @@ export default class Auth {
     return new Date().getTime() < expiresAt
   }
 
+  getIdToken() {
+    const idToken = localStorage.getItem('id_token')
+    if (!idToken) {
+      throw new Error('No ID Token found')
+    }
+    return idToken
+  }
+
   getAccessToken() {
     const accessToken = localStorage.getItem('access_token')
     if (!accessToken) {
@@ -86,6 +99,10 @@ export default class Auth {
   }
 
   authorizationHeader() {
-    return `Bearer ${this.getAccessToken()}`
+    return `Bearer ${this.getIdToken()}`
   }
 }
+
+const auth = new Auth()
+
+export default auth
