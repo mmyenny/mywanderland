@@ -5,9 +5,9 @@ class Photo < ApplicationRecord
   def thumbnail
     image.variant(
       combine_options: {
-        resize: "125x100",
+        resize: "125x125",
         gravity: "center",
-        extent: "125x100",  
+        extent: "125x125",  
         background: "black"
       }
     )

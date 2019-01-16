@@ -8,7 +8,6 @@ import Map from './Map'
 import Photos from './Photos'
 import Login from './Login'
 import Pinpopup from './Pinpopup'
-import Introduction from './Introduction'
 import Photo from './Photo'
 import Stars from './Stars'
 

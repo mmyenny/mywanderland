@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import axios from 'axios'
-import x from './images/x.png'
+
 import camera from './images/camera.jpeg'
 import plus_circle from './images/plus-circle.png'
 import minus_circle from './images/minus-circle.png'
@@ -82,6 +82,11 @@ class Photos extends Component {
 
     return (
       <div>
+        <div className="photoPageBack">
+          <Link className="photoPageBack" to="/Map">
+            back
+          </Link>
+        </div>
         <main className="photoGalleryPage">
           <div className="topBar">
             <div className="profileBar">
@@ -114,11 +119,6 @@ class Photos extends Component {
                 <button className="profileBar">Create Album</button>
               </form>
             </div>
-            <Link to="/Map">
-              <div className="x">
-                <img className="x" src={x} alt="x" />
-              </div>
-            </Link>
           </div>
 
           <div className="photoGallerySection">
