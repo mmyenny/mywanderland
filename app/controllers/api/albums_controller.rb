@@ -10,7 +10,7 @@ class Api::AlbumsController < ApplicationController
       user: {
         id: current_user.id,
         name: current_user.name,
-        profile_image: url_for(current_user.profile_image)
+        profile_image: current_user.profile_image.attached? ? url_for(current_user.profile_image) : ""
       },
       albums: albums.map do |album|
         {
@@ -20,7 +20,7 @@ class Api::AlbumsController < ApplicationController
             {
               id: photo.id,
               caption: photo.caption,
-              image: url_for(photo.image)
+              image: photo.image.attached? ? url_for(photo.thumbnail) : ""
             }
           end
 

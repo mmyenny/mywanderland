@@ -54,3 +54,5 @@ gem "activestorage-cloudinary-service", "~> 0.2.3"
 gem "cloudinary", "~> 1.11"
 
 gem "down", "~> 4.8"
+
+gem "mini_magick", "~> 4.9"

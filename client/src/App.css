@@ -249,6 +249,7 @@ main.photoGalleryPage {
   flex-wrap: wrap;
   background: white;
   border-radius: 5px;
+  margin: 5px;
 }
 
 div.topBar {
@@ -347,7 +348,7 @@ div.photo {
 img.photo {
   margin-top: 10px;
   width: 290px;
-  height: 280px;
+  /* height: 280px; */
 }
 
 div.photoPageBack {
