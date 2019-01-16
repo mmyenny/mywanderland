@@ -3,15 +3,13 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import MapGL, { Marker, Popup, NavigationControl } from 'react-map-gl'
 import history from './history'
 import axios from 'axios'
-import Pin from './images/pin.png'
 import photo_album from './images/photo-album1.png'
-
-import Pin1 from './images/pins.png'
+import Pin from './images/pins.png'
 import auth from './auth'
 
 class Map extends Component {
   smallestPinSize = 20
-  largestPinSize = 30
+  largestPinSize = 25
   mostZoomedOut = 2.5
   mostZoomedIn = 11.5
 
@@ -173,7 +171,7 @@ class Map extends Component {
                     <img
                       onClick={() => this.setState({ clickedPlace: place })}
                       width={this.markerSize()}
-                      src={Pin1}
+                      src={Pin}
                       alt="Pin"
                     />
                   </Marker>

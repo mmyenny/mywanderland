@@ -48,3 +48,5 @@ gem "rack-cors", "~> 1.0"
 gem "geocoder", "~> 1.5"
 
 gem "jwt", "~> 2.1"
+
+gem "activestorage-cloudinary-service", "~> 0.2.3"
