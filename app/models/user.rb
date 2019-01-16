@@ -11,7 +11,11 @@ class User < ApplicationRecord
       # This code will be called whenever we create a User for the first time.
   
       # This code would attach an ActiveStorage profile image by downloading the user's profile and storing it locally
-      user.profile_image.attach(io: StringIO.new(Net::HTTP.get(URI.parse(payload["picture"]))), filename: "profile.png")
+      begin
+        user.profile_image.attach(io: StringIO.new(Net::HTTP.get(URI.parse(payload["picture"]))), filename: "profile.png")
+      rescue => exception
+        # Don't worry if we can't get their image
+      end
   
       # This code would store their email address
       # user.email = payload["email"]
