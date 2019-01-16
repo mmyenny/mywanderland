@@ -52,3 +52,5 @@ gem "jwt", "~> 2.1"
 gem "activestorage-cloudinary-service", "~> 0.2.3"
 
 gem "cloudinary", "~> 1.11"
+
+gem "down", "~> 4.8"

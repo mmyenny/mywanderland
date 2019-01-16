@@ -12,11 +12,12 @@ class User < ApplicationRecord
   
       # This code would attach an ActiveStorage profile image by downloading the user's profile and storing it locally
       begin
-        user.profile_image.attach(io: StringIO.new(Net::HTTP.get(URI.parse(payload["picture"]))), filename: "profile.png")
-      rescue => exception
-        # Don't worry if we can't get their image
+        picture = Down.download(payload["picture"])
+        user.profile_image.attach(io: picture, filename: picture.original_filename)
+      rescue Down::Error => exception
+        Rails.logger.info exception
       end
-  
+      
       # This code would store their email address
       # user.email = payload["email"]
       user.name = payload["name"]
