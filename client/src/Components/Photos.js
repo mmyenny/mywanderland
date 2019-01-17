@@ -46,11 +46,15 @@ class Photos extends Component {
 
     // Submit that formData to make a new album
     axios.post('/api/albums', formData).then(response => {
-      // When that is done, load the albums
-      this.loadAlbums()
+      if (response.data.errors) {
+        alert("Album title can't be blank")
+      } else {
+        // When that is done, load the albums
+        this.loadAlbums()
 
-      // Clear the form
-      form.reset()
+        // Clear the form
+        form.reset()
+      }
     })
   }
 

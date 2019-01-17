@@ -37,7 +37,13 @@ class Api::AlbumsController < ApplicationController
     # For that place, create a new album
     album = place.albums.create(albums_params)
 
-    render json: album
+    if album.valid?
+      render json: album
+    else
+      render json: {
+        errors: album.errors.full_messages
+      }
+    end
   end
 
   private

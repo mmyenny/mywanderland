@@ -2,7 +2,7 @@ require 'net/http'
 
 class User < ApplicationRecord
   has_one_attached :profile_image
-  has_many :places
+  has_many :places, dependent: :destroy
   has_many :albums, through: :places
   has_many :photos, through: :albums
 

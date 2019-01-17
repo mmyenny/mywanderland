@@ -370,6 +370,12 @@ footer {
     height: 370px;
   }
 
+  h1.mainPage {
+    margin: 5px 175px 10px 175px;
+  }
+
+  /* Individual photo page */
+
   div.photo {
     max-width: 440px;
     margin: 20px;
@@ -385,7 +391,11 @@ footer {
 
   div.map {
     width: 610px;
-    height: 400px;
+    height: 420px;
+  }
+
+  h1.mainPage {
+    margin: 0 175px 10px 175px;
   }
 
   /* photo gallery page */

@@ -74,7 +74,6 @@ class Map extends Component {
 
   renderClickedPlace() {
     const { clickedPlace } = this.state
-    console.log({ clickedPlace })
 
     if (!clickedPlace) {
       return
