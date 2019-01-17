@@ -203,7 +203,7 @@ p.pinPopUp {
 img.photoAlbumPreview {
   max-height: 100px;
   max-width: 100px;
-  margin: 0;
+  margin: 2px;
 }
 
 button.pinPopUp {
@@ -317,7 +317,7 @@ div.photo {
   margin: 10px;
 }
 
-.dotsIcon {
+.photoDotsIcon {
   display: flex;
   justify-content: flex-end;
   width: 100%;

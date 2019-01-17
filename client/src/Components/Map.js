@@ -25,7 +25,8 @@ class Map extends Component {
         bearing: 0,
         pitch: 0
       },
-      places: []
+      places: [],
+      addDeleteButtonVisible: false
     }
   }
 
@@ -72,6 +73,23 @@ class Map extends Component {
     this.setState({ viewport })
   }
 
+  deletePlace = event => {
+    event.preventDefault()
+
+    const place_id = this.state.clickedPlace.id
+
+    axios.delete(`/api/places/${place_id}`).then(response => {
+      this.setState({ clickedPlace: null })
+      this.loadAllThePlaces()
+    })
+  }
+
+  toggleDeleteButton = () => {
+    this.setState({
+      addDeleteButtonVisible: !this.state.addDeleteButtonVisible
+    })
+  }
+
   renderClickedPlace() {
     const { clickedPlace } = this.state
 
@@ -100,6 +118,15 @@ class Map extends Component {
             <button className="pinPopUp">{prompt}</button>
           </Link>
         </div>
+        <div className="pinPopUpDotsIcon">
+          <i className="fas fa-ellipsis-h" onClick={this.toggleDeleteButton} />
+        </div>
+        <button
+          className={this.state.addDeleteButtonVisible ? '' : 'hidden'}
+          onClick={this.deletePlace}
+        >
+          Delete Location
+        </button>
       </Popup>
     )
   }

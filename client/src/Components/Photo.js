@@ -61,7 +61,7 @@ class Photo extends Component {
         </div>
 
         <div className="photo">
-          <div className="dotsIcon">
+          <div className="photoDotsIcon">
             <i
               className="fas fa-ellipsis-h"
               onClick={this.toggleDeleteButton}
