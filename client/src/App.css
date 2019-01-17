@@ -362,7 +362,27 @@ footer {
   z-index: -1;
 }
 
+@media (min-width: 450px) {
+  /* Map main page */
+
+  div.map {
+    width: 420px;
+    height: 370px;
+  }
+
+  div.photo {
+    max-width: 440px;
+    margin: 20px;
+  }
+
+  img.photo {
+    width: 420px;
+  }
+}
+
 @media (min-width: 750px) {
+  /* Map main page */
+
   div.map {
     width: 610px;
     height: 400px;
@@ -377,39 +397,11 @@ footer {
   }
 
   main.photoGalleryPage {
-    display: flex;
-    flex-wrap: wrap;
-    width: 800px;
+    width: 750px;
   }
 
   div.topBar {
-    width: 100%;
-    display: flex;
     justify-content: space-between;
-  }
-
-  div.profileBar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  div.photoGallerySection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  div.photoGalleryImages {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  img.photoGalleryImage {
-    margin: 2px;
-    height: 100px;
-    width: 125px;
   }
 
   /* Individual photo page */
