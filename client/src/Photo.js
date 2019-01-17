@@ -56,6 +56,9 @@ class Photo extends Component {
               onClick={this.toggleDeleteButton}
             />
           </div>
+          <button className={this.state.addDeleteButtonVisible ? '' : 'hidden'}>
+            Delete Photo
+          </button>
           <img className="photo" src={this.state.photo.image} alt="" />
           <h4> {this.state.photo.caption} </h4>
         </div>

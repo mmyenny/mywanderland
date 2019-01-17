@@ -326,6 +326,10 @@ i.fa-ellipsis-h {
   padding: 5px 10px 0 0;
 }
 
+.hidden {
+  display: none;
+}
+
 img.photo {
   margin-top: 5px;
   width: 290px;
