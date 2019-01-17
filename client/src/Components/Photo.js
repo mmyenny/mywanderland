@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import axios from 'axios'
+import history from '../history'
 
 class Photo extends Component {
   constructor(props) {
@@ -20,6 +21,16 @@ class Photo extends Component {
       this.setState({
         photo: response.data.photo
       })
+    })
+  }
+
+  deletePhoto = event => {
+    event.preventDefault()
+
+    const photoID = this.props.match.params.photo_id
+
+    axios.delete(`/api/photos/${photoID}`).then(response => {
+      history.push(`/Places/${this.props.match.params.place_id}`)
     })
   }
 
@@ -56,7 +67,10 @@ class Photo extends Component {
               onClick={this.toggleDeleteButton}
             />
           </div>
-          <button className={this.state.addDeleteButtonVisible ? '' : 'hidden'}>
+          <button
+            className={this.state.addDeleteButtonVisible ? '' : 'hidden'}
+            onClick={this.deletePhoto}
+          >
             Delete Photo
           </button>
           <img className="photo" src={this.state.photo.image} alt="" />

@@ -11,7 +11,8 @@ class Api::PlacesController < ApplicationController
           location: place.location,
           latitude: place.latitude,
           longitude: place.longitude,
-          album: place.albums
+          album: place.albums,
+          thumbnail: place.photos.first && url_for(place.photos.first.image)
         }
       end
     }

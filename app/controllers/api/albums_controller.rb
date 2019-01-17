@@ -16,13 +16,17 @@ class Api::AlbumsController < ApplicationController
         {
           id: album.id,
           title: album.title,
-          images: album.photos.map do |photo|
-            {
-              id: photo.id,
-              caption: photo.caption,
-              image: photo.image.attached? ? url_for(photo.thumbnail) : ""
-            }
-          end
+          images: album.
+                    photos.
+                    # Only take the photos that have an image attached, no back end
+                    select { |photo| photo.image.attached? }.
+                    map do |photo|
+                      {
+                        id: photo.id,
+                        caption: photo.caption,
+                        image: photo.image.attached? ? url_for(photo.thumbnail) : ""
+                      }
+                    end
 
           # image: album.photos.first ? url_for(album.photos.first.image) : nil
         }

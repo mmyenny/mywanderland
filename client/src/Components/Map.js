@@ -79,6 +79,9 @@ class Map extends Component {
       return
     }
 
+    const thumbnail = clickedPlace.thumbnail || photo_album
+    const prompt = clickedPlace.thumbnail ? 'View Photos' : 'Create Album'
+
     return (
       <Popup
         tipSize={5}
@@ -92,13 +95,9 @@ class Map extends Component {
       >
         <div className="pinPopUp">
           <p className="pinPopUp">{clickedPlace.location}</p>
-          {clickedPlace.album.length ? (
-            <p>{clickedPlace.album[0].title}</p>
-          ) : (
-            <img className="photoAlbumPreview" src={photo_album} alt="Place" />
-          )}
+          <img className="photoAlbumPreview" src={thumbnail} alt="Place" />
           <Link to={`/Places/${clickedPlace.id}`}>
-            <button className="pinPopUp">View Photos</button>
+            <button className="pinPopUp">{prompt}</button>
           </Link>
         </div>
       </Popup>

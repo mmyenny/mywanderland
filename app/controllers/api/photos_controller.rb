@@ -27,6 +27,11 @@ class Api::PhotosController < ApplicationController
   end
 
   def create
+    if !photos_params["image"]
+      render json: { errors: [ "No Image Present"] }
+      return
+    end
+
     album = current_user.albums.find(photos_params[:album_id])
 
     photo = album.photos.create(photos_params)
@@ -36,6 +41,10 @@ class Api::PhotosController < ApplicationController
 
   def delete
     photo = current_user.photos.find(params[:id])
+
+    photo.destroy
+
+    render json: photo
   end
 
   private
