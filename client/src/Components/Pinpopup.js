@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
-import photo_album from './images/photo-album1.png'
+import photo_album from '../images/photo-album1.png'
 
 class Pinpopup extends Component {
   render() {

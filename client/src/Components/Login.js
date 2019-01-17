@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import camera from './images/camera.jpeg'
-import plus_circle from './images/plus-circle.png'
-import logo from './images/logo1.png'
+import logo from '../images/logo1.png'
 
 class Login extends Component {
   render() {

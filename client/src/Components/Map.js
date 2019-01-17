@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import MapGL, { Marker, Popup, NavigationControl } from 'react-map-gl'
-import history from './history'
+import history from '../history'
 import axios from 'axios'
-import photo_album from './images/photo-album1.png'
-import Pin from './images/pins.png'
-import auth from './auth'
+import photo_album from '../images/photo-album1.png'
+import Pin from '../images/pins.png'
+import auth from '../auth'
 
 class Map extends Component {
   smallestPinSize = 15

@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import axios from 'axios'
 
-import camera from './images/camera.jpeg'
-import plus_circle from './images/plus-circle.png'
-import minus_circle from './images/minus-circle.png'
+import camera from '../images/camera.jpeg'
+import plus_circle from '../images/plus-circle.png'
+import minus_circle from '../images/minus-circle.png'
 
 class Photos extends Component {
   constructor(props) {

@@ -4,14 +4,14 @@ import auth from './auth'
 import history from './history'
 import axios from 'axios'
 import './App.css'
-import Map from './Map'
-import Photos from './Photos'
-import Login from './Login'
-import Pinpopup from './Pinpopup'
-import Photo from './Photo'
-import Stars from './Stars'
+import Map from './Components/Map'
+import Photos from './Components/Photos'
+import Login from './Components/Login'
+import Pinpopup from './Components/Pinpopup'
+import Photo from './Components/Photo'
+import Stars from './Components/Stars'
 
-import Footer from './Footer'
+import Footer from './Components/Footer'
 
 class App extends Component {
   componentWillMount() {
