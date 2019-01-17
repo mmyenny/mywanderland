@@ -41,6 +41,14 @@ class Api::PlacesController < ApplicationController
     render json: place
   end
 
+  def delete
+    place = current_user.places.find(params[:id])
+
+    place.destroy
+
+    render json: place
+  end
+
   private
 
   def places_params

@@ -80,13 +80,11 @@ class Photos extends Component {
     })
   }
 
-  deleteAlbum = event => {
+  deleteAlbum = (album_id, event) => {
     event.preventDefault()
 
-    const album_id = this.props.match.params.album_id
-
-    axios.delete(`/api/photos/${album_id}`).then(response => {
-      history.push(`/Places/${this.props.match.params.place_id}`)
+    axios.delete(`/api/albums/${album_id}`).then(response => {
+      this.loadAlbums()
     })
   }
 
@@ -179,7 +177,9 @@ class Photos extends Component {
                       />
                       <button>Create Photo</button>
                     </div>
-                    <button onClick={this.deleteAlbum}>Delete Album</button>
+                    <button onClick={this.deleteAlbum.bind(this, album.id)}>
+                      Delete Album
+                    </button>
                   </form>
                 )}
                 <div className="photosGalleryImages">

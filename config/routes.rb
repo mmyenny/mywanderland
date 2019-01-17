@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   post '/api/places', to: 'api/places#create'
   get '/api/places', to: 'api/places#index'
-  
+  delete '/api/places/:id', to: 'api/places#delete'
   
   get '/api/photos', to: 'api/photos#index'
   get '/api/photos/:id', to: 'api/photos#show'
