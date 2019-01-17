@@ -8,8 +8,8 @@ import Pin from './images/pins.png'
 import auth from './auth'
 
 class Map extends Component {
-  smallestPinSize = 20
-  largestPinSize = 25
+  smallestPinSize = 15
+  largestPinSize = 10
   mostZoomedOut = 2.5
   mostZoomedIn = 11.5
 
@@ -74,6 +74,7 @@ class Map extends Component {
 
   renderClickedPlace() {
     const { clickedPlace } = this.state
+    console.log({ clickedPlace })
 
     if (!clickedPlace) {
       return
@@ -92,7 +93,11 @@ class Map extends Component {
       >
         <div className="pinPopUp">
           <p className="pinPopUp">{clickedPlace.location}</p>
-          <img className="photoAlbumPreview" src={photo_album} alt="Place" />
+          {clickedPlace.album.length ? (
+            <p>{clickedPlace.album[0].title}</p>
+          ) : (
+            <img className="photoAlbumPreview" src={photo_album} alt="Place" />
+          )}
           <Link to={`/Places/${clickedPlace.id}`}>
             <button className="pinPopUp">View Photos</button>
           </Link>

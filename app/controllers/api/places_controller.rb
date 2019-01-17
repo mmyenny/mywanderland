@@ -10,8 +10,8 @@ class Api::PlacesController < ApplicationController
           id: place.id,
           location: place.location,
           latitude: place.latitude,
-          longitude: place.longitude
-        
+          longitude: place.longitude,
+          album: place.albums
         }
       end
     }

@@ -278,13 +278,14 @@ h4.photoGallerySection {
   font-weight: 550;
 }
 
-img.photoPlus {
+img.photoPlusMinus {
   border-radius: 50%;
   width: 20px;
 }
 
 div.photosGalleryImages {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -312,13 +313,22 @@ div.photo {
   width: 100%;
   max-width: 310px;
   min-height: 300px;
-  margin: 20px;
+  margin: 10px;
+}
+
+.dotsIcon {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+i.fa-ellipsis-h {
+  padding: 5px 10px 0 0;
 }
 
 img.photo {
-  margin-top: 10px;
+  margin-top: 5px;
   width: 290px;
-  /* height: 280px; */
 }
 
 div.photoPageBack {
@@ -330,7 +340,7 @@ div.photoPageBack {
 a.photoPageBack {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-  margin: 10px;
+  margin: 10px 20px 0 0;
 }
 
 /* Footer */
@@ -347,107 +357,100 @@ footer {
   z-index: -1;
 }
 
-/* media */
-/* 
-Full screen size perfect
+@media (min-width: 750px) {
+  /* photo gallery page */
 
-photo gallery page
+  main.photoGalleryPage {
+    display: flex;
+    flex-wrap: wrap;
+    background: white;
+    border-radius: 5px;
+  }
 
+  div.topBar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
 
+  div.profileBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-main.photoGalleryPage {
-  display: flex;
-  flex-wrap: wrap;
-  background: white;
-  border-radius: 5px;
+  img.profileImage {
+    width: 70px;
+    border-radius: 50%;
+    margin-top: 10px;
+  }
+
+  img.profilePlus {
+    border-radius: 50%;
+    width: 20px;
+    margin-top: -15px;
+    margin-left: 43px;
+  }
+
+  h4.profileBar {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 550;
+    margin: 10px 0 10px 5px;
+  }
+
+  input.profileBar {
+    width: 100px;
+    margin: 5px;
+  }
+
+  button.profileBar {
+    width: 100px;
+    cursor: pointer;
+  }
+
+  div.photoGallerySection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  h4.photoGallerySection {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 550;
+  }
+
+  img.photoPlus {
+    border-radius: 50%;
+    width: 20px;
+  }
+
+  div.photoGalleryImages {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  img.photoGalleryImage {
+    margin: 2px;
+    height: 100px;
+    width: 125px;
+  }
+
+  /* Individual photo page */
+
+  div.photo {
+    max-width: 550px;
+    margin: 20px;
+  }
+
+  img.photo {
+    width: 530px;
+  }
+
+  a.photoPageBack {
+    font-size: 18px;
+  }
 }
-
-div.topBar {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-div.profileBar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-img.profileImage {
-  width: 70px;
-  border-radius: 50%;
-  margin-top: 10px;
-}
-
-img.profilePlus {
-  border-radius: 50%;
-  width: 20px;
-  margin-top: -15px;
-  margin-left: 43px;
-}
-
-h4.profileBar {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 550;
-  margin: 10px 0 10px 5px;
-}
-
-input.profileBar  {
-  width: 100px;
-  margin: 5px;
-}
-
-button.profileBar  {
-  width: 100px;
-  cursor: pointer;
-}
-
-div.photoGallerySection {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-h4.photoGallerySection  {
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 550;
-}
-
-img.photoPlus {
-  border-radius: 50%;
-  width: 20px;
-}
-
-div.photoGalleryImages {
-  display:flex;
-  flex-wrap: wrap;
-}
-
-img.photoGalleryImage {
-  margin: 2px;
-  height: 100px;
-  width: 125px;
-}
-
-Individual photo page
-
-div.photo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: white;
-  border-radius: 5px;
-  width: 500px;
-  margin: 20px;
-}
-
-img.photo {
-  margin-top: 25px;
-  width: 450px;
-  height: 450px;
-} */

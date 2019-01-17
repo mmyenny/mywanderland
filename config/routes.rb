@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get '/api/photos', to: 'api/photos#index'
   get '/api/photos/:id', to: 'api/photos#show'
   post '/api/photos', to: 'api/photos#create'
+  delete '/api/photos/:id', to: 'api/photos#delete'
 end

@@ -7,7 +7,8 @@ class Photo extends Component {
     super(props)
 
     this.state = {
-      photo: null
+      photo: null,
+      addDeleteButtonVisible: false
     }
   }
 
@@ -19,6 +20,12 @@ class Photo extends Component {
       this.setState({
         photo: response.data.photo
       })
+    })
+  }
+
+  toggleDeleteButton = () => {
+    this.setState({
+      addDeleteButtonVisible: !this.state.addDeleteButtonVisible
     })
   }
 
@@ -38,11 +45,17 @@ class Photo extends Component {
             className="photoPageBack"
             to={`/Places/${this.props.match.params.place_id}`}
           >
-            back
+            &lt; back
           </Link>
         </div>
 
         <div className="photo">
+          <div className="dotsIcon">
+            <i
+              className="fas fa-ellipsis-h"
+              onClick={this.toggleDeleteButton}
+            />
+          </div>
           <img className="photo" src={this.state.photo.image} alt="" />
           <h4> {this.state.photo.caption} </h4>
         </div>

@@ -20,7 +20,7 @@ class Api::PhotosController < ApplicationController
 
     render json: {
       photo: {
-        image: url_for(photo.image),
+        image: photo.image.attached? && url_for(photo.image),
         caption: photo.caption
       }
     }
@@ -32,6 +32,10 @@ class Api::PhotosController < ApplicationController
     photo = album.photos.create(photos_params)
 
     render json: photo
+  end
+
+  def delete
+    photo = current_user.photos.find(params[:id])
   end
 
   private

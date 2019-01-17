@@ -84,7 +84,7 @@ class Photos extends Component {
       <div>
         <div className="photoPageBack">
           <Link className="photoPageBack" to="/Map">
-            back
+            &lt; back
           </Link>
         </div>
         <main className="photoGalleryPage">
@@ -128,7 +128,7 @@ class Photos extends Component {
                   {album.title}
                   {!this.state.addPhotoFormVisible && (
                     <img
-                      className="photoPlus"
+                      className="photoPlusMinus"
                       src={plus_circle}
                       alt="plus-circle"
                       onClick={this.toggleAddPhotoForm}
@@ -136,7 +136,7 @@ class Photos extends Component {
                   )}
                   {this.state.addPhotoFormVisible && (
                     <img
-                      className="photoPlus"
+                      className="photoPlusMinus"
                       src={minus_circle}
                       alt="plus-circle"
                       onClick={this.toggleAddPhotoForm}
@@ -144,20 +144,26 @@ class Photos extends Component {
                   )}
                 </h4>
                 {this.state.addPhotoFormVisible && (
-                  <form onSubmit={this.addPhotoToAlbum}>
+                  <form
+                    className="uploadPhotoForm"
+                    onSubmit={this.addPhotoToAlbum}
+                  >
                     <input
                       type="hidden"
                       name="photo[album_id]"
                       value={album.id}
                     />
                     <input type="file" name="photo[image]" />
-                    <input
-                      type="text"
-                      placeholder="Add an Image Caption"
-                      name="photo[caption]"
-                      autoComplete="off"
-                    />
-                    <button>Create Photo</button>
+                    <div>
+                      <input
+                        type="text"
+                        placeholder="Add an Image Caption"
+                        name="photo[caption]"
+                        autoComplete="off"
+                      />
+                      <button>Create Photo</button>
+                    </div>
+                    <button>Delete Album</button>
                   </form>
                 )}
                 <div className="photosGalleryImages">
