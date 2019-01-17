@@ -81,12 +81,13 @@ class Photos extends Component {
     }
 
     return (
-      <div>
+      <div className="photoGallery">
         <div className="photoPageBack">
           <Link className="photoPageBack" to="/Map">
             &lt; back
           </Link>
         </div>
+
         <main className="photoGalleryPage">
           <div className="topBar">
             <div className="profileBar">

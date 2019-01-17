@@ -281,6 +281,7 @@ h4.photoGallerySection {
 img.photoPlusMinus {
   border-radius: 50%;
   width: 20px;
+  cursor: pointer;
 }
 
 div.photosGalleryImages {
@@ -362,13 +363,23 @@ footer {
 }
 
 @media (min-width: 750px) {
+  div.map {
+    width: 610px;
+    height: 400px;
+  }
+
   /* photo gallery page */
+
+  div.photoGallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   main.photoGalleryPage {
     display: flex;
     flex-wrap: wrap;
-    background: white;
-    border-radius: 5px;
+    width: 800px;
   }
 
   div.topBar {
@@ -383,53 +394,11 @@ footer {
     align-items: center;
   }
 
-  img.profileImage {
-    width: 70px;
-    border-radius: 50%;
-    margin-top: 10px;
-  }
-
-  img.profilePlus {
-    border-radius: 50%;
-    width: 20px;
-    margin-top: -15px;
-    margin-left: 43px;
-  }
-
-  h4.profileBar {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    font-weight: 550;
-    margin: 10px 0 10px 5px;
-  }
-
-  input.profileBar {
-    width: 100px;
-    margin: 5px;
-  }
-
-  button.profileBar {
-    width: 100px;
-    cursor: pointer;
-  }
-
   div.photoGallerySection {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-  }
-
-  h4.photoGallerySection {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    font-weight: 550;
-  }
-
-  img.photoPlus {
-    border-radius: 50%;
-    width: 20px;
   }
 
   div.photoGalleryImages {
@@ -446,12 +415,12 @@ footer {
   /* Individual photo page */
 
   div.photo {
-    max-width: 550px;
+    max-width: 500px;
     margin: 20px;
   }
 
   img.photo {
-    width: 530px;
+    width: 480px;
   }
 
   a.photoPageBack {
