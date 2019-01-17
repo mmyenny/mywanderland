@@ -2,9 +2,11 @@ Rails.application.routes.draw do
 
   get '/api/albums/:id', to: 'api/albums#index'
   post '/api/albums', to: 'api/albums#create'
+  delete '/api/albums/:id', to: 'api/albums#delete'
 
   post '/api/places', to: 'api/places#create'
   get '/api/places', to: 'api/places#index'
+  
   
   get '/api/photos', to: 'api/photos#index'
   get '/api/photos/:id', to: 'api/photos#show'

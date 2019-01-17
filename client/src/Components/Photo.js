@@ -74,6 +74,15 @@ class Photo extends Component {
             Delete Photo
           </button>
           <img className="photo" src={this.state.photo.image} alt="" />
+          <p className="timeStamp">
+            {new Date(this.state.photo.timestamp).toLocaleTimeString([], {
+              month: 'short',
+              day: '2-digit',
+              year: 'numeric',
+              hour: 'numeric',
+              minute: 'numeric'
+            })}
+          </p>
           <h4> {this.state.photo.caption} </h4>
         </div>
       </div>

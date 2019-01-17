@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import axios from 'axios'
+import history from '../history'
 
 import camera from '../images/camera.jpeg'
 import plus_circle from '../images/plus-circle.png'
@@ -76,6 +77,16 @@ class Photos extends Component {
   toggleAddPhotoForm = () => {
     this.setState({
       addPhotoFormVisible: !this.state.addPhotoFormVisible
+    })
+  }
+
+  deleteAlbum = event => {
+    event.preventDefault()
+
+    const album_id = this.props.match.params.album_id
+
+    axios.delete(`/api/photos/${album_id}`).then(response => {
+      history.push(`/Places/${this.props.match.params.place_id}`)
     })
   }
 
@@ -168,7 +179,7 @@ class Photos extends Component {
                       />
                       <button>Create Photo</button>
                     </div>
-                    <button>Delete Album</button>
+                    <button onClick={this.deleteAlbum}>Delete Album</button>
                   </form>
                 )}
                 <div className="photosGalleryImages">

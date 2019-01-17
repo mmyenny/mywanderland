@@ -50,6 +50,14 @@ class Api::AlbumsController < ApplicationController
     end
   end
 
+  def delete
+    album = current_user.albums.find(params[:id])
+
+    album.destroy
+
+    render json: album
+  end
+
   private
 
   def albums_params

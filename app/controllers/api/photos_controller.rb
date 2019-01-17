@@ -21,7 +21,8 @@ class Api::PhotosController < ApplicationController
     render json: {
       photo: {
         image: photo.image.attached? && url_for(photo.image),
-        caption: photo.caption
+        caption: photo.caption,
+        timestamp: photo.created_at
       }
     }
   end
