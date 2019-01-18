@@ -181,7 +181,7 @@ div.pinPopUp {
   flex-direction: column;
   background-color: #eceae4;
   width: 140px;
-  height: 120px;
+  min-height: 120px;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
@@ -203,13 +203,26 @@ p.pinPopUp {
 img.photoAlbumPreview {
   max-height: 100px;
   max-width: 100px;
-  margin: 2px;
+  /* margin: 2px; */
 }
 
 button.pinPopUp {
   width: 100px;
-  /* margin: 10px; */
+  margin-top: 5px;
   cursor: pointer;
+}
+
+i.fa-trash-alt {
+  color: rgb(179, 16, 16);
+  margin-top: 6px;
+}
+
+div.pinPopUpButtons {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 90%;
 }
 
 /* photo gallery page */
@@ -262,6 +275,10 @@ input.profileBar {
 button.profileBar {
   width: 100px;
   cursor: pointer;
+}
+
+hr {
+  width: 80%;
 }
 
 div.photoGallerySection {

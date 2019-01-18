@@ -134,7 +134,7 @@ class Photos extends Component {
               </form>
             </div>
           </div>
-
+          <hr></hr>
           <div className="photoGallerySection">
             {this.state.albums.map(album => (
               <React.Fragment key={album.id}>

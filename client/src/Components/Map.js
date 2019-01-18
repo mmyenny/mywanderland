@@ -25,8 +25,7 @@ class Map extends Component {
         bearing: 0,
         pitch: 0
       },
-      places: [],
-      addDeleteButtonVisible: false
+      places: []
     }
   }
 
@@ -84,12 +83,6 @@ class Map extends Component {
     })
   }
 
-  toggleDeleteButton = () => {
-    this.setState({
-      addDeleteButtonVisible: !this.state.addDeleteButtonVisible
-    })
-  }
-
   renderClickedPlace() {
     const { clickedPlace } = this.state
 
@@ -113,20 +106,15 @@ class Map extends Component {
       >
         <div className="pinPopUp">
           <p className="pinPopUp">{clickedPlace.location}</p>
+          <hr />
           <img className="photoAlbumPreview" src={thumbnail} alt="Place" />
-          <Link to={`/Places/${clickedPlace.id}`}>
-            <button className="pinPopUp">{prompt}</button>
-          </Link>
+          <div className="pinPopUpButtons">
+            <Link to={`/Places/${clickedPlace.id}`}>
+              <button className="pinPopUp">{prompt}</button>
+            </Link>
+            <i className="fas fa-trash-alt" onClick={this.deletePlace} />
+          </div>
         </div>
-        <div className="pinPopUpDotsIcon">
-          <i className="fas fa-ellipsis-h" onClick={this.toggleDeleteButton} />
-        </div>
-        <button
-          className={this.state.addDeleteButtonVisible ? '' : 'hidden'}
-          onClick={this.deletePlace}
-        >
-          Delete Location
-        </button>
       </Popup>
     )
   }
