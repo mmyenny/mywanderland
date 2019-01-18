@@ -7,7 +7,7 @@ import './App.css'
 import Map from './Components/Map'
 import Photos from './Components/Photos'
 import Login from './Components/Login'
-import Pinpopup from './Components/Pinpopup'
+import Welcome from './Components/Welcome'
 import Photo from './Components/Photo'
 import Stars from './Components/Stars'
 
@@ -30,8 +30,8 @@ class App extends Component {
           <div className="App">
             <Route path="/" exact component={Login} />
             <Route path="/Login/" component={Login} />
+            <Route path="/Welcome/" component={Welcome} />
             <Route path="/Map/" component={Map} />
-            <Route path="/Pinpopup/" component={Pinpopup} />
             <Route exact path="/Places/:place_id" component={Photos} />
             <Route
               exact

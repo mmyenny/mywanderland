@@ -72,11 +72,15 @@ class Photos extends Component {
   }
 
   deleteAlbum = (event, album_id) => {
-    event.preventDefault()
+    const answer = window.confirm('Are you sure you want to delete this album?')
 
-    axios.delete(`/api/albums/${album_id}`).then(response => {
+    if (answer) {
+      axios.delete(`/api/albums/${album_id}`).then(response => {
+        this.loadAlbums()
+      })
+    } else {
       this.loadAlbums()
-    })
+    }
   }
 
   render() {

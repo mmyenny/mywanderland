@@ -51,7 +51,7 @@ class Auth {
         if (seenWelcomePage === 'yes') {
           history.replace('/Map')
         } else {
-          history.replace('/Pinpopup')
+          history.replace('/Welcome')
         }
       } else if (err) {
         history.replace('/')

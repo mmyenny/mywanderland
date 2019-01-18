@@ -73,16 +73,20 @@ class Map extends Component {
   }
 
   deletePlace = event => {
-    // event.preventDefault()
+    const answer = window.confirm(
+      'Are you sure you want to delete this location?'
+    )
 
-    const answer = window.confirm('Do you want to delete this place?')
+    const place_id = this.state.clickedPlace.id
 
-    // const place_id = this.state.clickedPlace.id
-
-    // axios.delete(`/api/places/${place_id}`).then(response => {
-    //   this.setState({ clickedPlace: null })
-    //   this.loadAllThePlaces()
-    // })
+    if (answer) {
+      axios.delete(`/api/places/${place_id}`).then(response => {
+        this.setState({ clickedPlace: null })
+        this.loadAllThePlaces()
+      })
+    } else {
+      this.loadAllThePlaces()
+    }
   }
 
   renderClickedPlace() {

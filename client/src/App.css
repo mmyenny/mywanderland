@@ -178,6 +178,31 @@ button.facebookLogIn {
   cursor: pointer;
 }
 
+/* Introduction */
+
+div.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+  width: 750px;
+}
+
+h1.welcome {
+  color: black;
+  font-family: billabong;
+  font-size: 2.25rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+button.welcome {
+  margin: 10px;
+  width: 75px;
+  cursor: pointer;
+}
+
 /* pin-popUp page */
 
 div.pinPopUp {
