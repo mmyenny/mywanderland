@@ -46,7 +46,13 @@ class Auth {
           callback()
         }
 
-        history.replace('/Map')
+        const seenWelcomePage = localStorage.getItem('seenWelcomePage')
+
+        if (seenWelcomePage === 'yes') {
+          history.replace('/Map')
+        } else {
+          history.replace('/Pinpopup')
+        }
       } else if (err) {
         history.replace('/')
         console.log(err)

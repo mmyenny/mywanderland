@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
-import history from '../history'
 
-import camera from '../images/camera.jpeg'
 import plus_circle from '../images/plus-circle.png'
-import minus_circle from '../images/minus-circle.png'
+import Album from './Album'
 
 class Photos extends Component {
   constructor(props) {
@@ -14,8 +12,7 @@ class Photos extends Component {
     this.state = {
       user: {},
       albums: [],
-      loaded: false,
-      addPhotoFormVisible: false
+      loaded: false
     }
   }
 
@@ -74,13 +71,7 @@ class Photos extends Component {
     })
   }
 
-  toggleAddPhotoForm = () => {
-    this.setState({
-      addPhotoFormVisible: !this.state.addPhotoFormVisible
-    })
-  }
-
-  deleteAlbum = (album_id, event) => {
+  deleteAlbum = (event, album_id) => {
     event.preventDefault()
 
     axios.delete(`/api/albums/${album_id}`).then(response => {
@@ -134,71 +125,15 @@ class Photos extends Component {
               </form>
             </div>
           </div>
-          <hr></hr>
+          <hr />
           <div className="photoGallerySection">
             {this.state.albums.map(album => (
-              <React.Fragment key={album.id}>
-                <h4 className="photoGallerySection">
-                  {album.title}
-                  {!this.state.addPhotoFormVisible && (
-                    <img
-                      className="photoPlusMinus"
-                      src={plus_circle}
-                      alt="plus-circle"
-                      onClick={this.toggleAddPhotoForm}
-                    />
-                  )}
-                  {this.state.addPhotoFormVisible && (
-                    <img
-                      className="photoPlusMinus"
-                      src={minus_circle}
-                      alt="plus-circle"
-                      onClick={this.toggleAddPhotoForm}
-                    />
-                  )}
-                </h4>
-                {this.state.addPhotoFormVisible && (
-                  <form
-                    className="uploadPhotoForm"
-                    onSubmit={this.addPhotoToAlbum}
-                  >
-                    <input
-                      type="hidden"
-                      name="photo[album_id]"
-                      value={album.id}
-                    />
-                    <input type="file" name="photo[image]" />
-                    <div>
-                      <input
-                        type="text"
-                        placeholder="Add an Image Caption"
-                        name="photo[caption]"
-                        autoComplete="off"
-                      />
-                      <button>Create Photo</button>
-                    </div>
-                    <button onClick={this.deleteAlbum.bind(this, album.id)}>
-                      Delete Album
-                    </button>
-                  </form>
-                )}
-                <div className="photosGalleryImages">
-                  {album.images.map((image, index) => (
-                    <Link
-                      key={index}
-                      to={`/Places/${this.props.match.params.place_id}/photos/${
-                        image.id
-                      }`}
-                    >
-                      <img
-                        className="photoGalleryImage"
-                        src={image.image}
-                        alt=""
-                      />
-                    </Link>
-                  ))}
-                </div>
-              </React.Fragment>
+              <Album
+                album={album}
+                place_id={this.props.match.params.place_id}
+                addPhotoToAlbum={this.addPhotoToAlbum}
+                deleteAlbum={this.deleteAlbum}
+              />
             ))}
           </div>
         </main>

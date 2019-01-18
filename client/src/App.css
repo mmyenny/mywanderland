@@ -98,6 +98,10 @@ div.map {
   border-radius: 5px;
 }
 
+img.pin {
+  cursor: pointer;
+}
+
 /* Log in page */
 
 main.logInPage {
@@ -298,6 +302,7 @@ h4.photoGallerySection {
 img.photoPlusMinus {
   border-radius: 50%;
   width: 20px;
+  margin: 0 0 -5px 5px;
   cursor: pointer;
 }
 

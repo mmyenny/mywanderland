@@ -73,14 +73,16 @@ class Map extends Component {
   }
 
   deletePlace = event => {
-    event.preventDefault()
+    // event.preventDefault()
 
-    const place_id = this.state.clickedPlace.id
+    const answer = window.confirm('Do you want to delete this place?')
 
-    axios.delete(`/api/places/${place_id}`).then(response => {
-      this.setState({ clickedPlace: null })
-      this.loadAllThePlaces()
-    })
+    // const place_id = this.state.clickedPlace.id
+
+    // axios.delete(`/api/places/${place_id}`).then(response => {
+    //   this.setState({ clickedPlace: null })
+    //   this.loadAllThePlaces()
+    // })
   }
 
   renderClickedPlace() {
@@ -187,6 +189,7 @@ class Map extends Component {
                     offsetRight={(-1 * this.markerSize()) / 2.0}
                   >
                     <img
+                      className="pin"
                       onClick={() => this.setState({ clickedPlace: place })}
                       width={this.markerSize()}
                       src={Pin}

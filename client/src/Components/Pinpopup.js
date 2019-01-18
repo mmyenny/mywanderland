@@ -5,6 +5,8 @@ import photo_album from '../images/photo-album1.png'
 
 class Pinpopup extends Component {
   render() {
+    localStorage.setItem('seenWelcomePage', 'yes')
+
     return (
       <div>
         <div className="pinPopUp">

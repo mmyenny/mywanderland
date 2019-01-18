@@ -3,7 +3,7 @@ class Api::AlbumsController < ApplicationController
     # Get the specific album
     place = current_user.places.find(params[:id]) 
 
-    albums = place.albums
+    albums = place.albums.order(created_at: :desc)
 
     # Make some json to return
     render json: {
@@ -18,6 +18,7 @@ class Api::AlbumsController < ApplicationController
           title: album.title,
           images: album.
                     photos.
+                    order(:created_at).
                     # Only take the photos that have an image attached, no back end
                     select { |photo| photo.image.attached? }.
                     map do |photo|
