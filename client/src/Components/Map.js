@@ -168,7 +168,7 @@ class Map extends Component {
                 autoComplete="off"
               />
               <button className="inputBox">
-                <i className="fas fa-map-pin" />
+                <i class="fas fa-thumbtack" />
               </button>
             </div>
           </form>

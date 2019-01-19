@@ -1,0 +1,1 @@
+Cloudinary::Utils::IMAGE_FORMATS << "jpeg"

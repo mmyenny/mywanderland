@@ -178,28 +178,61 @@ button.facebookLogIn {
   cursor: pointer;
 }
 
-/* Introduction */
+/* Welcome */
+
+div.welcomePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 div.welcome {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
-  border-radius: 5px;
-  width: 750px;
+  width: 270px;
+  padding: 10px 0 10px 0;
+  margin: 25px 10px 10px 10px;
+  background-color: rgba(1, 1, 59, 0.6);
+  border: 1.25px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
 }
 
 h1.welcome {
-  color: black;
+  color: white;
+  text-shadow: 1.5px 1.5px #338be6;
   font-family: billabong;
-  font-size: 2.25rem;
-  font-weight: 300;
-  margin: 0;
+  font-size: 38px;
+  font-weight: 100;
+  margin: 15px 0 30px 0;
+}
+
+p.welcomeQuote {
+  text-align: center;
+  color: white;
+  font-family: billabong;
+  font-weight: 0;
+  font-size: 24px;
+  margin: 5px;
+}
+
+p.welcome {
+  text-align: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  margin: 5px;
 }
 
 button.welcome {
+  background-color: rgb(184, 179, 179);
+  border-radius: 5px;
   margin: 10px;
-  width: 75px;
+  width: 90px;
+  margin: 10px;
+  font-size: 12px;
+  font-weight: 500;
   cursor: pointer;
 }
 
@@ -416,6 +449,21 @@ footer {
 }
 
 @media (min-width: 450px) {
+  /* Welcome */
+
+  div.welcome {
+    width: 370px;
+  }
+
+  h1.welcome {
+    font-size: 45px;
+    font-weight: 100;
+  }
+
+  p.welcomeQuote {
+    font-size: 28px;
+  }
+
   /* Map main page */
 
   div.map {
@@ -440,6 +488,12 @@ footer {
 }
 
 @media (min-width: 750px) {
+  /* Welcome */
+
+  div.welcome {
+    width: 500px;
+  }
+
   /* Map main page */
 
   div.map {

@@ -21,7 +21,7 @@ class Album extends Component {
 
   render() {
     return (
-      <React.Fragment key={this.props.album.id}>
+      <>
         <h4 className="photoGallerySection">
           {this.props.album.title}
           {!this.state.addPhotoFormVisible && (
@@ -80,7 +80,7 @@ class Album extends Component {
             </Link>
           ))}
         </div>
-      </React.Fragment>
+      </>
     )
   }
 }

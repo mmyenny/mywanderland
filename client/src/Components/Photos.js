@@ -133,6 +133,7 @@ class Photos extends Component {
           <div className="photoGallerySection">
             {this.state.albums.map(album => (
               <Album
+                key={album.id}
                 album={album}
                 place_id={this.props.match.params.place_id}
                 addPhotoToAlbum={this.addPhotoToAlbum}
