@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import MapGL, { Marker, Popup, NavigationControl } from 'react-map-gl'
 import history from '../history'
 import axios from 'axios'
 import photo_album from '../images/photo-album1.png'
-import Pin from '../images/pins.png'
+import Pin from '../images/pin.png'
 import auth from '../auth'
 
 class Map extends Component {
-  smallestPinSize = 15
+  smallestPinSize = 13
   largestPinSize = 10
   mostZoomedOut = 2.5
   mostZoomedIn = 11.5
@@ -168,7 +168,7 @@ class Map extends Component {
                 autoComplete="off"
               />
               <button className="inputBox">
-                <i class="fas fa-thumbtack" />
+                <i className="fas fa-thumbtack" />
               </button>
             </div>
           </form>

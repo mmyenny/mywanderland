@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import history from '../history'
 
@@ -46,8 +46,6 @@ class Photo extends Component {
       // don't show anything
       return <></>
     }
-
-    const photoID = this.props.match.params.photo_id
 
     return (
       <div className="individualPhoto">

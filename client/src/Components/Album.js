@@ -51,23 +51,33 @@ class Album extends Component {
               name="photo[album_id]"
               value={this.props.album.id}
             />
-            <input type="file" name="photo[image]" />
-            <div>
+            <div className="albumForm">
+              {/* <label className="uploadPhotoInput"> */}
               <input
-                type="text"
-                placeholder="Add an Image Caption"
-                name="photo[caption]"
-                autoComplete="off"
+                className="uploadPhotoInput"
+                type="file"
+                name="photo[image]"
               />
-              <button>Create Photo</button>
+              {/* </label> */}
+              <div>
+                <input
+                  className="addCaptionInput"
+                  type="text"
+                  placeholder="Add Photo Caption"
+                  name="photo[caption]"
+                  autoComplete="off"
+                />
+                <button className="addPhoto">Add Photo</button>
+              </div>
+              <button
+                className="deleteAlbum"
+                onClick={event =>
+                  this.props.deleteAlbum(event, this.props.album.id)
+                }
+              >
+                Delete Album
+              </button>
             </div>
-            <button
-              onClick={event =>
-                this.props.deleteAlbum(event, this.props.album.id)
-              }
-            >
-              Delete Album
-            </button>
           </form>
         )}
         <div className="photosGalleryImages">

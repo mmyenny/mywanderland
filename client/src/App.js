@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Router, Route, Link } from 'react-router-dom'
+import { Router, Route } from 'react-router-dom'
 import auth from './auth'
 import history from './history'
 import axios from 'axios'
