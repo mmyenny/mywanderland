@@ -56,11 +56,11 @@ class Stars extends React.Component {
           var dot = dots.array[i]
 
           if (dot.y < 0 || dot.y > canvas.height) {
-            dot.vx = dot.vx
+            // dot.vx = dot.vx
             dot.vy = -dot.vy
           } else if (dot.x < 0 || dot.x > canvas.width) {
             dot.vx = -dot.vx
-            dot.vy = dot.vy
+            // dot.vy = dot.vy
           }
           dot.x += dot.vx
           dot.y += dot.vy

@@ -10,7 +10,6 @@ import Login from './Components/Login'
 import Welcome from './Components/Welcome'
 import Photo from './Components/Photo'
 import Stars from './Components/Stars'
-
 import Footer from './Components/Footer'
 
 class App extends Component {
@@ -25,7 +24,9 @@ class App extends Component {
   render() {
     return (
       <>
-        <Stars />
+        <div className="stars-background">
+          <Stars />
+        </div>
         <Router history={history}>
           <div className="App">
             <Route path="/" exact component={Login} />
