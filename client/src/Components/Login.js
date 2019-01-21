@@ -11,10 +11,10 @@ class Login extends Component {
           <div className="logIn">
             <img className="logo" src={logo} alt="logo" />
             <Link to="/login">
-              <button className="googleLogIn">Log in with Google</button>
+              <button className="facebookLogIn">Log in with Facebook</button>
             </Link>
             <Link to="/login">
-              <button className="facebookLogIn">Log in with Facebook</button>
+              <button className="googleLogIn">Log in with Google</button>
             </Link>
           </div>
         </main>

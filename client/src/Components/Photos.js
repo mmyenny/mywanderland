@@ -12,7 +12,8 @@ class Photos extends Component {
     this.state = {
       user: {},
       albums: [],
-      loaded: false
+      loaded: false,
+      uploading: false
     }
   }
 
@@ -59,16 +60,38 @@ class Photos extends Component {
   addPhotoToAlbum = event => {
     event.preventDefault()
 
+    if (this.state.uploading) {
+      alert('Already uploading, please wait')
+      return
+    }
+
     const form = event.target
 
     const formData = new FormData(form)
 
-    axios.post('/api/photos', formData).then(response => {
-      // When that is done, load the albums
-      this.loadAlbums()
+    this.setState(
+      {
+        uploading: true
+      },
+      () => {
+        axios
+          .post('/api/photos', formData)
+          .then(response => {
+            // When that is done, load the albums
+            this.loadAlbums()
 
-      form.reset()
-    })
+            this.setState({
+              uploading: false
+            })
+            form.reset()
+          })
+          .catch(() => {
+            this.setState({
+              uploading: false
+            })
+          })
+      }
+    )
   }
 
   deleteAlbum = (event, album_id) => {

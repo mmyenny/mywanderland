@@ -66,7 +66,9 @@ class Photo extends Component {
             />
           </div>
           <button
-            className={this.state.addDeleteButtonVisible ? '' : 'hidden'}
+            className={`deletePhoto ${
+              this.state.addDeleteButtonVisible ? '' : 'hidden'
+            }`}
             onClick={this.deletePhoto}
           >
             Delete Photo

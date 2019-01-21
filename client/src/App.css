@@ -156,9 +156,9 @@ img.logo {
   margin-bottom: 5px;
 }
 
-button.googleLogIn {
+button.facebookLogIn {
   color: white;
-  background-color: #3a88ed;
+  background-color: #395a94;
   border: none;
   font-size: 15px;
   height: 25px;
@@ -167,9 +167,9 @@ button.googleLogIn {
   cursor: pointer;
 }
 
-button.facebookLogIn {
+button.googleLogIn {
   color: white;
-  background-color: #395a94;
+  background-color: #3a88ed;
   border: none;
   font-size: 15px;
   height: 25px;
@@ -371,16 +371,16 @@ div.photosGalleryImages {
 }
 
 div.albumForm {
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  align-items: center; */
+  align-items: center;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   width: 250px;
   margin-bottom: 15px;
 }
 
 input.uploadPhotoInput {
-  margin: 5px 0 0 45px;
+  margin: 5px 0 0 75px;
   cursor: pointer;
 }
 
@@ -391,7 +391,7 @@ input.addCaptionInput {
   );
   border-width: 1.75px;
   border-image-slice: 1;
-  margin: 5px 0 5px 20px;
+  margin: 5px 0 5px 0;
 }
 
 button.addPhoto {
@@ -400,7 +400,6 @@ button.addPhoto {
 }
 
 button.deleteAlbum {
-  margin: auto 30%;
   margin-bottom: 5px;
   outline: none;
   cursor: pointer;
@@ -456,6 +455,7 @@ i.fa-ellipsis-h {
 }
 
 button.deletePhoto {
+  outline: none;
   cursor: pointer;
 }
 
@@ -583,7 +583,7 @@ footer {
 }
 
 /* Don't show the stars on mobile */
-@media (max-width: 700px) {
+@media (max-width: 350px) {
   .stars-background {
     display: none;
   }
