@@ -625,7 +625,7 @@ footer {
 }
 
 /* Don't show the stars on mobile */
-@media (max-width: 350px) {
+@media (max-width: 450px) {
   .stars-background {
     display: none;
   }

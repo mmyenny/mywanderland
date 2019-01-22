@@ -67,7 +67,6 @@ class Album extends Component {
                   autoComplete="off"
                 />
               </div>
-              <hr />
               <div>
                 <button className="addPhoto">Add Photo</button>
               </div>
