@@ -90,6 +90,34 @@ button.inputBox {
   cursor: pointer;
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 60px;
+  background-color: #e3f0f5;
+  color: black;
+  text-align: center;
+  border-radius: 2px;
+  padding: 2.5px;
+  text-transform: capitalize;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 120%;
+  left: 50%;
+  margin-left: -30px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
 div.map {
   width: 310px;
   height: 250px;
@@ -100,34 +128,6 @@ div.map {
 
 img.pin {
   cursor: pointer;
-}
-
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 100px;
-  background-color: #eceae4;
-  color: black;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  text-transform: capitalize;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 11px;
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-  top: -5px;
-  left: 105%;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  z-index: 1;
 }
 
 /* Log in page */
@@ -293,7 +293,6 @@ p.pinPopUp {
 img.photoAlbumPreview {
   max-height: 100px;
   max-width: 100px;
-  /* margin: 2px; */
 }
 
 button.pinPopUp {
@@ -403,12 +402,12 @@ div.albumForm {
   flex-direction: column;
   align-items: center;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  width: 250px;
+  width: 300px;
   margin-bottom: 15px;
 }
 
 input.uploadPhotoInput {
-  margin: 5px 0 0 75px;
+  margin: 10px 0 0 75px;
   cursor: pointer;
 }
 
@@ -423,17 +422,22 @@ input.addCaptionInput {
 }
 
 button.addPhoto {
-  margin-left: 5px;
+  margin-bottom: 10px;
+  padding: 3px;
+  outline: none;
   cursor: pointer;
+  font-size: 14px;
+  color: white;
+  background-color: rgb(9, 122, 28);
+  border-color: rgb(9, 122, 28);
+  border-radius: 5px;
 }
 
 button.deleteAlbum {
-  margin-bottom: 5px;
+  margin: 5px;
   outline: none;
   cursor: pointer;
-}
-
-button.deleteAlbum:hover {
+  font-size: 14px;
   color: rgb(179, 16, 16);
   border-color: rgb(179, 16, 16);
   border-radius: 5px;
@@ -523,7 +527,7 @@ footer {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -569,6 +573,13 @@ footer {
   }
 }
 
+@media (min-width: 500px) {
+  div.map {
+    width: 490px;
+    height: 370px;
+  }
+}
+
 @media (min-width: 750px) {
   /* Welcome */
 
@@ -579,8 +590,8 @@ footer {
   /* Map main page */
 
   div.map {
-    width: 610px;
-    height: 420px;
+    width: 700px;
+    height: 450px;
   }
 
   h1.mainPage {
@@ -599,14 +610,17 @@ footer {
     width: 750px;
   }
 
-  div.topBar {
-    justify-content: space-between;
-  }
-
   /* Individual photo page */
 
   a.photoPageBack {
     font-size: 18px;
+  }
+}
+
+@media (min-width: 900px) {
+  div.map {
+    width: 775px;
+    height: 450px;
   }
 }
 

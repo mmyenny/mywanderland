@@ -167,9 +167,12 @@ class Map extends Component {
                 name="place[location]"
                 autoComplete="off"
               />
-              <button className="inputBox">
-                <i className="fas fa-thumbtack" />
-              </button>
+              <div className="tooltip">
+                <button className="inputBox">
+                  <i className="fas fa-thumbtack" />
+                </button>
+                <span className="tooltiptext"> Add Pin</span>
+              </div>
             </div>
           </form>
           <div className="map">
@@ -192,17 +195,13 @@ class Map extends Component {
                     offsetLeft={(-1 * this.markerSize()) / 2.0}
                     offsetRight={(-1 * this.markerSize()) / 2.0}
                   >
-                    <div className="tooltip">
-                      <img
-                        className="pin"
-                        onClick={() => this.setState({ clickedPlace: place })}
-                        width={this.markerSize()}
-                        src={Pin}
-                        alt="Pin"
-                      />
-
-                      <span className="tooltiptext"> {place.location}</span>
-                    </div>
+                    <img
+                      className="pin"
+                      onClick={() => this.setState({ clickedPlace: place })}
+                      width={this.markerSize()}
+                      src={Pin}
+                      alt="Pin"
+                    />
                   </Marker>
                 )
               })}

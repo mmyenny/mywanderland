@@ -52,13 +52,12 @@ class Album extends Component {
               value={this.props.album.id}
             />
             <div className="albumForm">
-              {/* <label className="uploadPhotoInput"> */}
               <input
                 className="uploadPhotoInput"
                 type="file"
                 name="photo[image]"
               />
-              {/* </label> */}
+
               <div>
                 <input
                   className="addCaptionInput"
@@ -67,8 +66,13 @@ class Album extends Component {
                   name="photo[caption]"
                   autoComplete="off"
                 />
+              </div>
+              <hr />
+              <div>
                 <button className="addPhoto">Add Photo</button>
               </div>
+            </div>
+            <div className="albumForm">
               <button
                 className="deleteAlbum"
                 onClick={event =>
