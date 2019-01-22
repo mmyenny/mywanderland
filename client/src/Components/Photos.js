@@ -150,6 +150,7 @@ class Photos extends Component {
                 />
                 <button className="profileBar">Create Album</button>
               </form>
+              <p>Place</p>
             </div>
           </div>
           <hr />
