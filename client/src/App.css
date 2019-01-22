@@ -10,7 +10,7 @@ html,
 body {
   min-height: 100vh;
   width: 100vw;
-  margin: 0;
+  margin: 0 0 3rem 0;
   padding: 0;
 }
 
@@ -449,14 +449,18 @@ button.addPhoto {
 
 button.deleteAlbum {
   margin: 10px;
-  padding: 5px;
-  width: 100px;
+  padding: 3px 7px 7px 7px;
+  width: 125px;
   outline: none;
   cursor: pointer;
   font-size: 14px;
   color: rgb(179, 16, 16);
   border-color: rgb(179, 16, 16);
   border-radius: 5px;
+}
+
+i.deleteAlbum {
+  padding-right: 7px;
 }
 
 img.photoGalleryImage {
@@ -503,11 +507,12 @@ i.fa-ellipsis-h {
 }
 
 button.deletePhoto {
+  padding: 0 5px 5px 5px;
+  margin-bottom: 5px;
+  width: 125px;
   outline: none;
   cursor: pointer;
-}
-
-button.deletePhoto:hover {
+  font-size: 14px;
   color: rgb(179, 16, 16);
   border-color: rgb(179, 16, 16);
   border-radius: 5px;
@@ -540,10 +545,12 @@ a.photoPageBack {
 
 footer {
   color: white;
+  background-color: #010338;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   text-align: center;
-  margin-bottom: 10px;
+  position: fixed;
+  padding: 1rem 0;
   bottom: 0;
   width: 100%;
   cursor: pointer;

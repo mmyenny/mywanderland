@@ -71,6 +71,7 @@ class Photo extends Component {
             }`}
             onClick={this.deletePhoto}
           >
+            <i className="fas fa-trash-alt deleteAlbum" />
             Delete Photo
           </button>
           <img className="photo" src={this.state.photo.image} alt="" />

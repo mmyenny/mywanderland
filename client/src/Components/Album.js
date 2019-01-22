@@ -78,6 +78,7 @@ class Album extends Component {
                   this.props.deleteAlbum(event, this.props.album.id)
                 }
               >
+                <i className="fas fa-trash-alt deleteAlbum" />
                 Delete Album
               </button>
             </div>
