@@ -61,6 +61,10 @@ a {
   text-decoration: none;
 }
 
+a:visited {
+  color: white;
+}
+
 h1.mainPage {
   color: white;
   text-shadow: 1.75px 1.75px #338be6;
@@ -288,6 +292,7 @@ div.mapboxgl-popup-content {
 
 p.pinPopUp {
   margin: 0;
+  text-transform: capitalize;
 }
 
 img.photoAlbumPreview {
@@ -364,6 +369,14 @@ input.profileBar {
 button.profileBar {
   width: 100px;
   cursor: pointer;
+}
+
+p.placeName {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 550;
+  text-transform: capitalize;
+  margin: 15px 0 0 0;
 }
 
 hr {
@@ -531,10 +544,9 @@ footer {
   font-size: 14px;
   text-align: center;
   margin-bottom: 10px;
-  position: absolute;
   bottom: 0;
   width: 100%;
-  z-index: -1;
+  cursor: pointer;
 }
 
 @media (min-width: 450px) {

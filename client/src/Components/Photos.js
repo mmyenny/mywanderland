@@ -12,6 +12,7 @@ class Photos extends Component {
     this.state = {
       user: {},
       albums: [],
+      place: {},
       loaded: false,
       uploading: false
     }
@@ -28,6 +29,7 @@ class Photos extends Component {
       this.setState({
         loaded: true,
         albums: response.data.albums,
+        place: response.data.place,
         user: response.data.user
       })
     })
@@ -150,7 +152,7 @@ class Photos extends Component {
                 />
                 <button className="profileBar">Create Album</button>
               </form>
-              <p>Place</p>
+              <p className="placeName">{this.state.place.location}</p>
             </div>
           </div>
           <hr />

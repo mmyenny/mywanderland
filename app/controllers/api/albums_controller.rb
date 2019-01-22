@@ -12,6 +12,9 @@ class Api::AlbumsController < ApplicationController
         name: current_user.name,
         profile_image: current_user.profile_image.attached? ? url_for(current_user.profile_image) : ""
       },
+      place: {
+        location: place.location
+      },
       albums: albums.map do |album|
         {
           id: album.id,
