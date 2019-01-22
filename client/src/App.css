@@ -102,6 +102,34 @@ img.pin {
   cursor: pointer;
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 100px;
+  background-color: #eceae4;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  text-transform: capitalize;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 105%;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  z-index: 1;
+}
+
 /* Log in page */
 
 main.logInPage {

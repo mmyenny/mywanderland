@@ -192,13 +192,17 @@ class Map extends Component {
                     offsetLeft={(-1 * this.markerSize()) / 2.0}
                     offsetRight={(-1 * this.markerSize()) / 2.0}
                   >
-                    <img
-                      className="pin"
-                      onClick={() => this.setState({ clickedPlace: place })}
-                      width={this.markerSize()}
-                      src={Pin}
-                      alt="Pin"
-                    />
+                    <div className="tooltip">
+                      <img
+                        className="pin"
+                        onClick={() => this.setState({ clickedPlace: place })}
+                        width={this.markerSize()}
+                        src={Pin}
+                        alt="Pin"
+                      />
+
+                      <span className="tooltiptext"> {place.location}</span>
+                    </div>
                   </Marker>
                 )
               })}
