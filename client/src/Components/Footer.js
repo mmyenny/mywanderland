@@ -4,7 +4,9 @@ class Footer extends Component {
   render() {
     return (
       <footer>
-        <a href="http://michelleyenny.surge.sh/">Created by Michelle Yenny</a>
+        <a className="footer" href="http://michelleyenny.surge.sh/">
+          Created by Michelle Yenny
+        </a>
       </footer>
     )
   }

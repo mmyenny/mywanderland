@@ -90,6 +90,7 @@ input.inputBox {
 button.inputBox {
   border-radius: 5px;
   margin-left: 5px;
+  background-color: white;
   outline: none;
   cursor: pointer;
 }
@@ -393,6 +394,7 @@ div.photoGallerySection {
 h4.photoGallerySection {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
+  text-transform: capitalize;
   font-size: 14px;
   font-weight: 550;
 }
@@ -550,10 +552,14 @@ footer {
   font-size: 14px;
   text-align: center;
   position: fixed;
-  padding: 1rem 0;
+  padding: 10px 0;
   bottom: 0;
   width: 100%;
   cursor: pointer;
+}
+
+a.footer {
+  color: white;
 }
 
 @media (min-width: 450px) {
