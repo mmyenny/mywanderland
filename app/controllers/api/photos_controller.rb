@@ -20,7 +20,7 @@ class Api::PhotosController < ApplicationController
 
     render json: {
       photo: {
-        image: photo.image.attached? && url_for(photo.image),
+        image: photo.image.attached? && url_for(photo.image.variant("auto-orient": true)),
         caption: photo.caption,
         timestamp: photo.created_at
       }

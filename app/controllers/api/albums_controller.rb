@@ -10,7 +10,7 @@ class Api::AlbumsController < ApplicationController
       user: {
         id: current_user.id,
         name: current_user.name,
-        profile_image: current_user.profile_image.attached? ? url_for(current_user.profile_image) : ""
+        profile_image: current_user.profile_image.attached? ? url_for(current_user.profile_image.variant("auto-orient": true)) : ""
       },
       place: {
         location: place.location

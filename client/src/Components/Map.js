@@ -175,6 +175,7 @@ class Map extends Component {
               </div>
             </div>
           </form>
+          {/* This code shows map and pins */}
           <div className="map">
             <MapGL
               {...viewport}

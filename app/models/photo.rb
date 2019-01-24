@@ -6,6 +6,7 @@ class Photo < ApplicationRecord
 
   def thumbnail
     image.variant(
+      auto_orient: true,
       combine_options: {
         resize: "125x125",
         gravity: "center",
