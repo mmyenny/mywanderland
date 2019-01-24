@@ -531,6 +531,10 @@ p.timeStamp {
   font-size: 12px;
 }
 
+h4.caption {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 div.photoPageBack {
   display: flex;
   justify-content: flex-end;

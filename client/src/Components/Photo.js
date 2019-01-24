@@ -84,7 +84,7 @@ class Photo extends Component {
               minute: 'numeric'
             })}
           </p>
-          <h4> {this.state.photo.caption} </h4>
+          <h4 className="caption"> {this.state.photo.caption} </h4>
         </div>
       </div>
     )
