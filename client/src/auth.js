@@ -36,7 +36,7 @@ class Auth {
     // navigate to the home route
     history.replace('/')
   }
-
+  //Uses local storage to determine if the user has seen the welcome page
   handleAuthentication(callback) {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {

@@ -98,7 +98,7 @@ class Map extends Component {
 
     const thumbnail = clickedPlace.thumbnail || photo_album
     const prompt = clickedPlace.thumbnail ? 'View Photos' : 'Create Album'
-
+    //have clickhandler to show the markerpopup
     return (
       <Popup
         tipSize={5}
@@ -175,7 +175,7 @@ class Map extends Component {
               </div>
             </div>
           </form>
-          {/* This code shows map and pins */}
+          {/* This code shows map using MapBoxGL npm package from uber*/}
           <div className="map">
             <MapGL
               {...viewport}
@@ -189,6 +189,7 @@ class Map extends Component {
 
               {this.state.places.map(place => {
                 return (
+                  // Using geocoder gem to geocode locations - pulls lat and long that gives me the marker
                   <Marker
                     key={place.id}
                     latitude={place.latitude}
