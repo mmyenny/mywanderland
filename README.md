@@ -1,24 +1,16 @@
-# README
+<p align="center">
+<img src="src/images/MyWanderland.gif">
+</p>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Summary
 
-Things you may want to cover:
+MyWanderland allows you to organize your photos based on places you have traveled.
 
-* Ruby version
+## Technologies Used
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Ruby on Rails
+- Axios
+- Javascript - https://www.javascript.com/
+- REACT - https://reactjs.org/
+- CSS
+- HTML
