@@ -1,5 +1,5 @@
 <p align="center">
-<img src="src/images/MyWanderland.gif">
+<img src="client/src/images/MyWanderland.gif">
 </p>
 
 ## Summary
