@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import history from '../history'
+import loading from '../images/globe2.gif'
 
 class Photo extends Component {
   constructor(props) {
@@ -44,7 +45,11 @@ class Photo extends Component {
     // If we don't have a photo yet...
     if (!this.state.photo) {
       // don't show anything
-      return <></>
+      return (
+        <div className="loading">
+          <img className="loading" alt="" src={loading} />
+        </div>
+      )
     }
 
     return (

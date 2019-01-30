@@ -31,6 +31,13 @@ canvas {
   left: 0;
 }
 
+div.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 @font-face {
   font-family: billabong;
   src: url(./images/Billabong.ttf);
