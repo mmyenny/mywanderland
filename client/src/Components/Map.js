@@ -6,6 +6,7 @@ import axios from 'axios'
 import photo_album from '../images/photo-album1.png'
 import Pin from '../images/pin.png'
 import auth from '../auth'
+import Loading from './Loading'
 
 class Map extends Component {
   smallestPinSize = 13
@@ -25,7 +26,7 @@ class Map extends Component {
         bearing: 0,
         pitch: 0
       },
-      places: []
+      places: null
     }
   }
 
@@ -139,6 +140,10 @@ class Map extends Component {
   }
 
   render() {
+    if (!this.state.places) {
+      return <Loading />
+    }
+
     const { viewport } = this.state
 
     const navStyle = {

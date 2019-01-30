@@ -4,6 +4,7 @@ import axios from 'axios'
 
 import plus_circle from '../images/plus-circle.png'
 import Album from './Album'
+import Loading from './Loading'
 
 class Photos extends Component {
   constructor(props) {
@@ -110,7 +111,7 @@ class Photos extends Component {
 
   render() {
     if (!this.state.loaded) {
-      return <></>
+      return <Loading />
     }
 
     return (
